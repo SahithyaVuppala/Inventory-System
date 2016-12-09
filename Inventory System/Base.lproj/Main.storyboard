@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,6 +19,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SK6-PB-z90">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                </variation>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jX9-Sm-czF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="User-100.png"/>
@@ -80,8 +87,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SK6-PB-z90" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="1ID-wy-aji"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SK6-PB-z90" secondAttribute="bottom" id="GkR-5c-WSe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SK6-PB-z90" secondAttribute="trailing" constant="-20" id="LUn-GV-RBG"/>
+                            <constraint firstItem="SK6-PB-z90" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="uF3-KM-h6r"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="SK6-PB-z90"/>
                                 <exclude reference="jX9-Sm-czF"/>
                                 <exclude reference="GEV-F6-bYH"/>
                                 <exclude reference="IP7-0y-2Rw"/>
@@ -89,15 +103,28 @@
                                 <exclude reference="RT2-uW-rG9"/>
                                 <exclude reference="IdR-i7-O82"/>
                             </mask>
+                            <mask key="constraints">
+                                <exclude reference="1ID-wy-aji"/>
+                                <exclude reference="LUn-GV-RBG"/>
+                                <exclude reference="uF3-KM-h6r"/>
+                                <exclude reference="GkR-5c-WSe"/>
+                            </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="SK6-PB-z90"/>
                                 <include reference="jX9-Sm-czF"/>
                                 <include reference="GEV-F6-bYH"/>
                                 <include reference="IP7-0y-2Rw"/>
                                 <include reference="C0D-Gm-O7X"/>
                                 <include reference="RT2-uW-rG9"/>
                                 <include reference="IdR-i7-O82"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1ID-wy-aji"/>
+                                <include reference="LUn-GV-RBG"/>
+                                <include reference="uF3-KM-h6r"/>
+                                <include reference="GkR-5c-WSe"/>
                             </mask>
                         </variation>
                     </view>
@@ -589,7 +616,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" tag="100" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyAnnouncement" textLabel="n9Y-s1-aiV" detailTextLabel="v8K-YQ-vk5" style="IBUITableViewCellStyleSubtitle" id="evh-x1-vj0">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="10" contentMode="center" tableViewCell="evh-x1-vj0" id="uDj-Da-Pxb">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1105,6 +1132,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="M7d-bg-wEj">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                </variation>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Inventory System" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBk-Ae-jz4">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1182,6 +1215,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="M7d-bg-wEj"/>
                                 <exclude reference="fBk-Ae-jz4"/>
                                 <exclude reference="b4J-uv-zqi"/>
                                 <exclude reference="PdD-KR-RRW"/>
@@ -1194,6 +1228,7 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="M7d-bg-wEj"/>
                                 <include reference="fBk-Ae-jz4"/>
                                 <include reference="b4J-uv-zqi"/>
                                 <include reference="PdD-KR-RRW"/>
@@ -1225,6 +1260,7 @@
         <image name="Guest Male-96.png" width="96" height="96"/>
         <image name="Star-25.png" width="25" height="25"/>
         <image name="User-100.png" width="100" height="100"/>
+        <image name="images.jpg" width="240" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Hig-BY-cxX"/>
