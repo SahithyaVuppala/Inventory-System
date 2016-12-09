@@ -253,7 +253,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="submitBTN:" destination="nxs-Oq-NOB" eventType="touchUpInside" id="1jN-vu-siH"/>
-                                    <segue destination="nex-vo-dhy" kind="presentation" identifier="" id="Pgq-ZX-8Mt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCj-Za-gd8">
@@ -646,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cob-cx-C0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3007.5" y="924"/>
+            <point key="canvasLocation" x="2842.5" y="1060"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="8Gs-T0-ndt">

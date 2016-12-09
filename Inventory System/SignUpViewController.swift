@@ -59,24 +59,46 @@ class SignUpViewController: UIViewController {
         myUser.setObject(userName!, forKey: "Full_Name")
         
         myUser.signUpInBackgroundWithBlock( {
+            
             (success, error) -> Void in
+            
             if let error = error as NSError? {
+                
                 let errorString = error.userInfo["error"] as? NSString
+                
                 // In case something went wrong, use errorString to get the error
+                
                 self.displayAlertWithTitle("Something has gone wrong", message:"\(errorString)")
+                
             } else {
+                
                 // Everything went okay
-                self.displayAlertWithTitle("Success!", message:"Registration was successful")
+                
+                let successMessage = "login with user credentials"
+                
+                self.displayMessage(successMessage)
+                
+                return
+                
+                //
+                
                 let emailVerified = myUser["emailVerified"]
+                
                 if emailVerified != nil && (emailVerified as! Bool) == true {
+                    
                     // Everything is fine
                     
+                    
+                    
                 } else {
+                    
                     // The email has not been verified, so logout the user
+                    
                     PFUser.logOut()
+                    
                 }
+                
             } })
-        
         
 
     }
@@ -116,6 +138,27 @@ class SignUpViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
         
     }
+    
+    func displayMessage(theMesssage:String)
+        
+    {
+        
+        // Display alert message with confirmation.
+        
+        var myAlert = UIAlertController(title:"User Registration is Successful", message:theMesssage, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.Default){ action in
+            
+            self.dismissViewControllerAnimated(true, completion:nil)
+            
+        }
+        
+        myAlert.addAction(okAction)
+        
+        self.presentViewController(myAlert, animated:true, completion:nil)
+        
+    }
+    
     /*
     // MARK: - Navigation
 
