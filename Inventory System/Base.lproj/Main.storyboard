@@ -21,9 +21,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SK6-PB-z90">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jX9-Sm-czF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -104,10 +101,10 @@
                                 <exclude reference="IdR-i7-O82"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="GkR-5c-WSe"/>
                                 <exclude reference="1ID-wy-aji"/>
                                 <exclude reference="LUn-GV-RBG"/>
                                 <exclude reference="uF3-KM-h6r"/>
-                                <exclude reference="GkR-5c-WSe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -121,10 +118,10 @@
                                 <include reference="IdR-i7-O82"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="GkR-5c-WSe"/>
                                 <include reference="1ID-wy-aji"/>
                                 <include reference="LUn-GV-RBG"/>
                                 <include reference="uF3-KM-h6r"/>
-                                <include reference="GkR-5c-WSe"/>
                             </mask>
                         </variation>
                     </view>
@@ -147,10 +144,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7UQ-Rl-OoS">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="7UQ-Rl-OoS">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">The inventory system will help a businessman manage his online store. For example, suppose there is an Amazon salesman Bob who buys products on sale in physical stores such as BestBuy and Target and then re-sells them on Amazon. The problem is that the physical stores usually have restrictions on the number of products one can buy at most during sale time. So Bob recruits some people to buy these products and send them to Bob’s Amazon store. Now Bob wants an inventory system to keep the inventory and billing records. Supposes Bob wants to collect some iPhone 6s, he will announce how many he needs and how much he pays for each of them in the inventory system. When Alice buys some products, say 5 iPhone 6s, for Bob, she logins the inventory system and records 5 iPhone 6s. Then she asks Bob for a shipping label and requests a payment.   When Bob sees the request, he will upload a shipping label to the system so Alice can download it. Next, Alice will download the label, ship the package, and upload the shipping receipt into the system. When Bob receives the package, he will examine the products. If everything matches, he will make a payment to Alice.</string>
+                                <mutableString key="text">The inventory system will help a businessman manage his online store. For example, suppose there is an Amazon salesman Bob who buys products on sale in physical stores such as BestBuy and Target and then re-sells them on Amazon. The problem is that the physical stores usually have restrictions on the number of products one can buy at most during sale time. So Bob recruits some people to buy these products and send them to Bob’s Amazon store. Now Bob wants an inventory system to keep the inventory and billing records. Supposes Bob wants to collect some iPhone 6s, he will announce how many he needs and how much he pays for each of them in the inventory system. When Alice buys some products, say 5 iPhone 6s, for Bob, she logins the inventory system and records 5 iPhone 6s. Then she asks Bob for a shipping label and requests a payment.   When Bob sees the request, he will upload a shipping label to the system so Alice can download it. Next, Alice will download the label, ship the package, and upload the shipping receipt into the system. When Bob receives the package, he will examine the products. If everything matches, he will make a payment to Alice.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -1275,6 +1272,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c1y-Z6-dWe"/>
-        <segue reference="ITA-Ac-cke"/>
+        <segue reference="wGo-xk-uy2"/>
     </inferredMetricsTieBreakers>
 </document>
