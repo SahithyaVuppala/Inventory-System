@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		13AEE68D1DFA427C001E36BA /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13AEE68C1DFA427C001E36BA /* images.jpg */; };
+		13E18B781DFA4EF100578346 /* 148127892828609.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13E18B771DFA4EF100578346 /* 148127892828609.jpg */; };
+		13E18B7A1DFA59EF00578346 /* imageedit_5_9934407718.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */; };
 		5383359B1DF78A0A00DCD0D7 /* Parse-iOS in Resources */ = {isa = PBXBuildFile; fileRef = 5383359A1DF78A0A00DCD0D7 /* Parse-iOS */; };
 		538893E51DF528F800E2628E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */; };
 		53A208D01DF8ABBC0052BB9D /* Businessman Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */; };
@@ -55,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		13AEE68C1DFA427C001E36BA /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
+		13E18B771DFA4EF100578346 /* 148127892828609.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 148127892828609.jpg; path = ../../../Desktop/148127892828609.jpg; sourceTree = "<group>"; };
+		13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageedit_5_9934407718.jpg; sourceTree = "<group>"; };
 		5383359A1DF78A0A00DCD0D7 /* Parse-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Parse-iOS"; sourceTree = "<group>"; };
 		538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Businessman Filled-100.png"; sourceTree = "<group>"; };
@@ -176,11 +180,13 @@
 				CE354A391DB01190003E2412 /* PromptViewController.swift */,
 				CE7AA1361DB2D57D009AE29A /* HistoryViewController.swift */,
 				CE354A3B1DB01292003E2412 /* GuestViewController.swift */,
+				13E18B771DFA4EF100578346 /* 148127892828609.jpg */,
 				538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */,
 				CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */,
 				CE354A3F1DB02416003E2412 /* AnnouncementViewController.swift */,
 				53A208D71DF8BB7E0052BB9D /* Star-25.png */,
 				53A208DF1DF8BD570052BB9D /* Clock25.png */,
+				13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */,
 				13AEE68C1DFA427C001E36BA /* images.jpg */,
 				53A208E31DF8BEA50052BB9D /* Clock-35.png */,
 				CE7AA1341DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png */,
@@ -276,6 +282,7 @@
 				CE360BD01DAAC873004E45CC /* LaunchScreen.storyboard in Resources */,
 				53A208E01DF8BD570052BB9D /* Clock25.png in Resources */,
 				CE360BD91DAAC9B1004E45CC /* Gender Neutral User Filled-25.png in Resources */,
+				13E18B781DFA4EF100578346 /* 148127892828609.jpg in Resources */,
 				CE360BCD1DAAC873004E45CC /* Assets.xcassets in Resources */,
 				5383359B1DF78A0A00DCD0D7 /* Parse-iOS in Resources */,
 				53A208D81DF8BB7E0052BB9D /* Star-25.png in Resources */,
@@ -289,6 +296,7 @@
 				CE360BE01DAACAB7004E45CC /* Guest Male-96.png in Resources */,
 				53A208E41DF8BEA50052BB9D /* Clock-35.png in Resources */,
 				13AEE68D1DFA427C001E36BA /* images.jpg in Resources */,
+				13E18B7A1DFA59EF00578346 /* imageedit_5_9934407718.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
