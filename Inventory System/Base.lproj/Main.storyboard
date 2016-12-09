@@ -146,18 +146,26 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t49-tz-0o3">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-8" y="0.0" width="336" height="480"/>
                                 </variation>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7UQ-Rl-OoS">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7UQ-Rl-OoS">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">The inventory system will help a businessman manage his online store. For example, suppose there is an Amazon salesman Bob who buys products on sale in physical stores such as BestBuy and Target and then re-sells them on Amazon. The problem is that the physical stores usually have restrictions on the number of products one can buy at most during sale time. So Bob recruits some people to buy these products and send them to Bob’s Amazon store. Now Bob wants an inventory system to keep the inventory and billing records. Supposes Bob wants to collect some iPhone 6s, he will announce how many he needs and how much he pays for each of them in the inventory system. When Alice buys some products, say 5 iPhone 6s, for Bob, she logins the inventory system and records 5 iPhone 6s. Then she asks Bob for a shipping label and requests a payment.   When Bob sees the request, he will upload a shipping label to the system so Alice can download it. Next, Alice will download the label, ship the package, and upload the shipping receipt into the system. When Bob receives the package, he will examine the products. If everything matches, he will make a payment to Alice.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">The inventory system will help a businessman manage his online store. For example, suppose there is an Amazon salesman Bob who buys products on sale in physical stores such as BestBuy and Target and then re-sells them on Amazon. The problem is that the physical stores usually have restrictions on the number of products one can buy at most during sale time. So Bob recruits some people to buy these products and send them to Bob’s Amazon store. Now Bob wants an inventory system to keep the inventory and billing records. Supposes Bob wants to collect some iPhone 6s, he will announce how many he needs and how much he pays for each of them in the inventory system. When Alice buys some products, say 5 iPhone 6s, for Bob, she logins the inventory system and records 5 iPhone 6s. Then she asks Bob for a shipping label and requests a payment.   When Bob sees the request, he will upload a shipping label to the system so Alice can download it. Next, Alice will download the label, ship the package, and upload the shipping receipt into the system. When Bob receives the package, he will examine the products. If everything matches, he will make a payment to Alice.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="38" y="74" width="262" height="261"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="29" y="80" width="262" height="297"/>
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Inventory System" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fef-km-hE2" colorLabel="IBBuiltInLabel-Red">
@@ -176,7 +184,7 @@
                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="87" y="380" width="130" height="29"/>
+                                    <rect key="frame" x="86" y="431" width="130" height="29"/>
                                 </variation>
                                 <connections>
                                     <action selector="signUpBTN:" destination="xq1-FD-nr8" eventType="touchUpInside" id="Puf-Ln-f8W"/>
@@ -185,24 +193,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jQl-Lq-rVn" firstAttribute="top" secondItem="t49-tz-0o3" secondAttribute="bottom" id="5fC-9J-RYQ"/>
-                            <constraint firstItem="t49-tz-0o3" firstAttribute="top" secondItem="9Qb-gd-mX6" secondAttribute="topMargin" id="f2d-HD-h5U"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="t49-tz-0o3" secondAttribute="trailing" constant="-24" id="rw2-YQ-cqe"/>
-                            <constraint firstItem="t49-tz-0o3" firstAttribute="leading" secondItem="9Qb-gd-mX6" secondAttribute="leadingMargin" constant="-24" id="t50-vc-M3V"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="t49-tz-0o3"/>
                                 <exclude reference="7UQ-Rl-OoS"/>
                                 <exclude reference="fef-km-hE2"/>
                                 <exclude reference="Na5-T6-goX"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="f2d-HD-h5U"/>
-                                <exclude reference="rw2-YQ-cqe"/>
-                                <exclude reference="t50-vc-M3V"/>
-                                <exclude reference="5fC-9J-RYQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -211,12 +207,6 @@
                                 <include reference="7UQ-Rl-OoS"/>
                                 <include reference="fef-km-hE2"/>
                                 <include reference="Na5-T6-goX"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="f2d-HD-h5U"/>
-                                <include reference="rw2-YQ-cqe"/>
-                                <include reference="t50-vc-M3V"/>
-                                <include reference="5fC-9J-RYQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -240,9 +230,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aWg-9R-vTj">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSK-No-kAU">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -378,10 +365,10 @@
                                 <exclude reference="VCj-Za-gd8"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9Jf-YY-qQz"/>
                                 <exclude reference="R4K-CB-pBm"/>
                                 <exclude reference="gHG-Si-Bkh"/>
                                 <exclude reference="tce-84-ADa"/>
-                                <exclude reference="9Jf-YY-qQz"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -401,10 +388,10 @@
                                 <include reference="VCj-Za-gd8"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="9Jf-YY-qQz"/>
                                 <include reference="R4K-CB-pBm"/>
                                 <include reference="gHG-Si-Bkh"/>
                                 <include reference="tce-84-ADa"/>
-                                <include reference="9Jf-YY-qQz"/>
                             </mask>
                         </variation>
                     </view>
@@ -435,9 +422,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="k7t-dW-ioG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCD-8c-aHx">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -528,10 +512,10 @@
                                 <exclude reference="cfX-dj-CUZ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6fE-Iw-Qic"/>
                                 <exclude reference="8oa-HM-Pkv"/>
                                 <exclude reference="h1t-ZB-Lzb"/>
                                 <exclude reference="mc5-No-CK0"/>
-                                <exclude reference="6fE-Iw-Qic"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -546,10 +530,10 @@
                                 <include reference="cfX-dj-CUZ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="6fE-Iw-Qic"/>
                                 <include reference="8oa-HM-Pkv"/>
                                 <include reference="h1t-ZB-Lzb"/>
                                 <include reference="mc5-No-CK0"/>
-                                <include reference="6fE-Iw-Qic"/>
                             </mask>
                         </variation>
                     </view>
@@ -578,9 +562,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="b10-KV-H8b">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAu-oQ-MQw">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -696,10 +677,10 @@
                                 <exclude reference="DBO-Gw-tdL"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="NGE-Ky-NKi"/>
                                 <exclude reference="8K7-NQ-K3r"/>
                                 <exclude reference="hvO-yW-S8g"/>
                                 <exclude reference="phq-ZY-sWd"/>
-                                <exclude reference="NGE-Ky-NKi"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -716,10 +697,10 @@
                                 <include reference="DBO-Gw-tdL"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="NGE-Ky-NKi"/>
                                 <include reference="8K7-NQ-K3r"/>
                                 <include reference="hvO-yW-S8g"/>
                                 <include reference="phq-ZY-sWd"/>
-                                <include reference="NGE-Ky-NKi"/>
                             </mask>
                         </variation>
                     </view>
@@ -806,9 +787,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="heP-dG-Ow2">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQw-Rp-Acx">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -871,10 +849,10 @@
                                 <exclude reference="7uy-90-B81"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="4YR-H6-MyT"/>
                                 <exclude reference="QSK-Sa-SFn"/>
                                 <exclude reference="T1P-gl-BV3"/>
                                 <exclude reference="dm2-Hy-rRR"/>
-                                <exclude reference="4YR-H6-MyT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -886,10 +864,10 @@
                                 <include reference="7uy-90-B81"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="4YR-H6-MyT"/>
                                 <include reference="QSK-Sa-SFn"/>
                                 <include reference="T1P-gl-BV3"/>
                                 <include reference="dm2-Hy-rRR"/>
-                                <include reference="4YR-H6-MyT"/>
                             </mask>
                         </variation>
                     </view>
@@ -916,9 +894,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZpB-uX-TQI">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
-                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -971,9 +946,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4iy-JH-N1i">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
-                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1046,9 +1018,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-ZF-DNG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
-                                </variation>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13n-Hs-EZM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1206,9 +1175,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KOw-uC-Wbo">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
-                                </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAF-s8-RKm">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1295,9 +1261,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bMZ-yE-85I">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Announcement 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19e-sZ-ewO">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1578,7 +1541,7 @@
         <image name="imageedit_5_9934407718.jpg" width="240" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wGo-xk-uy2"/>
         <segue reference="Hig-BY-cxX"/>
-        <segue reference="ITA-Ac-cke"/>
     </inferredMetricsTieBreakers>
 </document>
