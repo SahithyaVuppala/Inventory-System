@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13AEE68D1DFA427C001E36BA /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13AEE68C1DFA427C001E36BA /* images.jpg */; };
 		13E18B7A1DFA59EF00578346 /* imageedit_5_9934407718.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */; };
+		537C09D51E00AD6F002382C1 /* Announcements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C09D41E00AD6F002382C1 /* Announcements.swift */; };
 		5383359B1DF78A0A00DCD0D7 /* Parse-iOS in Resources */ = {isa = PBXBuildFile; fileRef = 5383359A1DF78A0A00DCD0D7 /* Parse-iOS */; };
 		538893E51DF528F800E2628E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */; };
 		53A208D01DF8ABBC0052BB9D /* Businessman Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		13AEE68C1DFA427C001E36BA /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
 		13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageedit_5_9934407718.jpg; sourceTree = "<group>"; };
+		537C09D41E00AD6F002382C1 /* Announcements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcements.swift; sourceTree = "<group>"; };
 		5383359A1DF78A0A00DCD0D7 /* Parse-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Parse-iOS"; sourceTree = "<group>"; };
 		538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Businessman Filled-100.png"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				CE360BCE1DAAC873004E45CC /* LaunchScreen.storyboard */,
 				CE360BD11DAAC873004E45CC /* Info.plist */,
 				53AA6BB61DF9F395009D5915 /* AdminLoginViewController.swift */,
+				537C09D41E00AD6F002382C1 /* Announcements.swift */,
 			);
 			path = "Inventory System";
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				CE360BC61DAAC873004E45CC /* AppDelegate.swift in Sources */,
 				CE3C93681DFB5D700024024E /* NewAnnouncementViewController.swift in Sources */,
 				CE354A3C1DB01292003E2412 /* GuestViewController.swift in Sources */,
+				537C09D51E00AD6F002382C1 /* Announcements.swift in Sources */,
 				CE7D4C001DC542BC00FA9078 /* AdminTableViewController.swift in Sources */,
 				CE354A401DB02416003E2412 /* AnnouncementViewController.swift in Sources */,
 				CE7D4C021DC5463800FA9078 /* AdminAnnouncementViewController.swift in Sources */,
