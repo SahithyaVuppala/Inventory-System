@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import Bolts
 
-class NewAnnouncementViewController: UIViewController {
+class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var productNameTF: UITextField!
     
@@ -18,11 +18,18 @@ class NewAnnouncementViewController: UIViewController {
 
     @IBOutlet weak var quantityTF: UITextField!
     
-    @IBOutlet weak var imageTF: UITextField!
+    
+    @IBOutlet weak var imageIV: UIImageView!
+    
+    let imagePicker = UIImagePickerController()
+    
+    var imageData:NSData! = NSData()
     
     override func viewDidLoad() {
         self.navigationItem.title = "Add Product"
         super.viewDidLoad()
+        imagePicker.delegate = self
+
 
         // Do any additional setup after loading the view.
     }
@@ -37,13 +44,31 @@ class NewAnnouncementViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func browseBTN(sender: AnyObject) {
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func AddBTN(sender: AnyObject) {
         
         let announcement = PFObject(className: "Announcements")
         announcement["name"] = productNameTF.text
         announcement["productDescription"] = productDescriptionTF.text
         announcement["quantity"] = Int(quantityTF.text!)!
-        announcement["image"] = imageTF.text
+        let imageFile:PFFile = PFFile(data: imageData)!
+        announcement["image"] = imageFile
+        
+//        let imageFile:PFFile = PFFile(data: self.imageData)!
+//        dispatch_async(dispatch_get_main_queue(),{
+//        
+//
+//          announcement["image"] = imageFile
+//            
+//        })
+//        
+//        announcement["image"] = imageFile
         
         announcement.saveInBackgroundWithBlock({ (success, error) -> Void in
             if success {
@@ -54,6 +79,26 @@ class NewAnnouncementViewController: UIViewController {
             }
         })
         
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageIV.contentMode = .ScaleAspectFit
+            imageIV.image = pickedImage
+            
+            imageData = UIImagePNGRepresentation(imageIV.image!)
+        }
+        
+//        if let pickedImageURL = info[UIImagePickerControllerMediaURL] as? String{
+//            imageTF.text = pickedImageURL
+//        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func displayAlertWithTitle(title:String, message:String){
