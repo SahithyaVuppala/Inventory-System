@@ -21,14 +21,14 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
     
     @IBOutlet weak var imageIV: UIImageView!
     
-    let imagePicker = UIImagePickerController()
-    
-    var imageData:NSData! = NSData()
+//    let imagePicker = UIImagePickerController()
+//    
+//    var imageData:NSData! = NSData()
     
     override func viewDidLoad() {
         self.navigationItem.title = "Add Product"
         super.viewDidLoad()
-        imagePicker.delegate = self
+//        imagePicker.delegate = self
 
 
         // Do any additional setup after loading the view.
@@ -45,10 +45,10 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func browseBTN(sender: AnyObject) {
-        
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
+//        
+//        imagePicker.allowsEditing = false
+//        imagePicker.sourceType = .PhotoLibrary
+//        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func AddBTN(sender: AnyObject) {
@@ -57,8 +57,8 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
         announcement["name"] = productNameTF.text
         announcement["productDescription"] = productDescriptionTF.text
         announcement["quantity"] = Int(quantityTF.text!)!
-        let imageFile:PFFile = PFFile(data: imageData)!
-        announcement["image"] = imageFile
+//        let imageFile:PFFile = PFFile(data: imageData)!
+        //announcement["image"] = ""
         
 //        let imageFile:PFFile = PFFile(data: self.imageData)!
 //        dispatch_async(dispatch_get_main_queue(),{
@@ -82,24 +82,24 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
         
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageIV.contentMode = .ScaleAspectFit
-            imageIV.image = pickedImage
-            
-            imageData = UIImagePNGRepresentation(imageIV.image!)
-        }
-        
-//        if let pickedImageURL = info[UIImagePickerControllerMediaURL] as? String{
-//            imageTF.text = pickedImageURL
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            imageIV.contentMode = .ScaleAspectFit
+//            imageIV.image = pickedImage
+//            
+//            imageData = UIImagePNGRepresentation(imageIV.image!)
 //        }
-        
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
+//        
+////        if let pickedImageURL = info[UIImagePickerControllerMediaURL] as? String{
+////            imageTF.text = pickedImageURL
+////        }
+//        
+//        dismissViewControllerAnimated(true, completion: nil)
+//    }
+//    
+//    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+//        dismissViewControllerAnimated(true, completion: nil)
+//    }
     
     func displayAlertWithTitle(title:String, message:String){
         let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)

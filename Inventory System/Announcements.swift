@@ -14,7 +14,7 @@ class Announcements:PFObject, PFSubclassing {
     @NSManaged var name:String
     @NSManaged var productDescription:String
     @NSManaged var quantity:Int
-    @NSManaged var image:NSData
+    @NSManaged var image:String
     
     static func parseClassName() -> String {
         return "Announcements"
