@@ -32,7 +32,7 @@ class PromptViewController: UIViewController {
     
     
     
-    @IBAction func submitBTN(sender: AnyObject) {
+    @IBAction func submitBTN(_ sender: AnyObject) {
          //Action related to submit button
         if userNameTF.text == "" || passwordTF.text == "" {
                     displayMyAlertMessage("Inavlid User name or Password")
@@ -47,7 +47,7 @@ class PromptViewController: UIViewController {
             return
         }
         
-        PFUser.logInWithUsernameInBackground(userNameTF.text!, password: passwordTF.text!, block: {(user, error) -> Void in
+        PFUser.logInWithUsername(inBackground: userNameTF.text!, password: passwordTF.text!, block: {(user, error) -> Void in
             
             if error != nil{
                 print(error)
@@ -58,7 +58,7 @@ class PromptViewController: UIViewController {
 //                let emailVerified = user!["emailVerified"]
 //                if emailVerified != nil && (emailVerified as! Bool) == true {
 //
-                self.performSegueWithIdentifier("tabBarSegue", sender: nil)
+                self.performSegue(withIdentifier: "tabBarSegue", sender: nil)
 //                if let destinationTabBar = tabBarSegue.destinationViewController as? UITabBarController {
 //                    
 //                                    destinationTabBar.viewControllers?.removeAtIndex(2)
@@ -87,52 +87,52 @@ class PromptViewController: UIViewController {
     
 //    func
     
-    @IBAction func forgotBTN(sender: AnyObject) {
+    @IBAction func forgotBTN(_ sender: AnyObject) {
         // Action related to forgot password button
         }
     
-    @IBAction func unwindSegueLogout(sender: UIStoryboardSegue){
-        let logoutView = sender.sourceViewController as! FeaturedViewController
+    @IBAction func unwindSegueLogout(_ sender: UIStoryboardSegue){
+        let logoutView = sender.source as! FeaturedViewController
         userNameTF!.text = ""
         passwordTF!.text = ""
     }
 
-    @IBAction func newUserBTN(sender: AnyObject) {
+    @IBAction func newUserBTN(_ sender: AnyObject) {
         // Action related to new user button
     }
         
-    func displayMyAlertMessage(userMessage:String) {
+    func displayMyAlertMessage(_ userMessage:String) {
         
-        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.alert)
         
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
         
         myAlert.addAction(okAction)
-        self.presentViewController(myAlert, animated: true, completion: nil)
+        self.present(myAlert, animated: true, completion: nil)
         
     }
     
-    func displayAlertWithTitle(title:String, message:String){
-        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .Default, handler: nil)
+    func displayAlertWithTitle(_ title:String, message:String){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(defaultAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func unwindFromForgotPassword(sender:UIStoryboardSegue){
+    @IBAction func unwindFromForgotPassword(_ sender:UIStoryboardSegue){
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     
         if segue.identifier == "tabBarSegue"{
             
-            if let destinationTabBar = segue.destinationViewController as? UITabBarController {
+            if let destinationTabBar = segue.destination as? UITabBarController {
                 
-                destinationTabBar.viewControllers?.removeAtIndex(3)
-                destinationTabBar.viewControllers?.removeAtIndex(2)
+                destinationTabBar.viewControllers?.remove(at: 3)
+                destinationTabBar.viewControllers?.remove(at: 2)
                 
             }
         }

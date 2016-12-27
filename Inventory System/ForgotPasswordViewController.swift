@@ -16,9 +16,9 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var emailIdTF: UITextField!
     
   
-    @IBAction func closeFgtPwdBTN(sender: AnyObject) {
+    @IBAction func closeFgtPwdBTN(_ sender: AnyObject) {
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -33,37 +33,37 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     
-    @IBAction func resetPwdBTN(sender: AnyObject) {
+    @IBAction func resetPwdBTN(_ sender: AnyObject) {
         
         let userEmail = emailIdTF.text!
-        PFUser.requestPasswordResetForEmailInBackground(userEmail) {
-            (success:Bool, error:NSError?) -> Void in
-            
-            if(success)
-            {
-                let successMessage = "Email message was sent to you at \(userEmail)"
-                self.displayMessage(successMessage)
-                return
-            }
-            
-            if(error != nil)
-            {
-                let errorMessage:String = error!.userInfo["error"] as! String
-                self.displayMessage(errorMessage)
-            }
-        }
+//        PFUser.requestPasswordResetForEmail(inBackground: userEmail) {
+//            (success:Bool, error:NSError?) -> Void in
+//            
+//            if(success)
+//            {
+//                let successMessage = "Email message was sent to you at \(userEmail)"
+//                self.displayMessage(successMessage)
+//                return
+//            }
+//            
+//            if(error != nil)
+//            {
+//                let errorMessage:String = error!.userInfo["error"] as! String
+//                self.displayMessage(errorMessage)
+//            }
+//        }
     }
 
     
-    func displayMessage(theMesssage:String)
+    func displayMessage(_ theMesssage:String)
     {
         // Display alert message with confirmation.
-        var myAlert = UIAlertController(title:"Alert", message:theMesssage, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.Default){ action in
-            self.dismissViewControllerAnimated(true, completion:nil)
+        let myAlert = UIAlertController(title:"Alert", message:theMesssage, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.default){ action in
+            self.dismiss(animated: true, completion:nil)
         }
         myAlert.addAction(okAction)
-        self.presentViewController(myAlert, animated:true, completion:nil)
+        self.present(myAlert, animated:true, completion:nil)
     }
 
 }

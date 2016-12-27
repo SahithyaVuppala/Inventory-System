@@ -22,16 +22,16 @@ class BillingViewController: UIViewController {
     }
     
     
-    @IBAction func submitBTN(sender: AnyObject) {
+    @IBAction func submitBTN(_ sender: AnyObject) {
         displayMessage("Your Bill has been sent successfully")
     }
     
-    func displayMessage(message:String) {
+    func displayMessage(_ message:String) {
         let alert = UIAlertController(title: "", message: message,
-                                      preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title:"OK", style: .Default, handler: nil)
+                                      preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title:"OK", style: .default, handler: nil)
         alert.addAction(defaultAction)
-        self.presentViewController(alert,animated:true, completion:nil)
+        self.present(alert,animated:true, completion:nil)
     }
 
     /*

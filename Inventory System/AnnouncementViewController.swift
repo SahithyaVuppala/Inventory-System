@@ -24,19 +24,19 @@ class AnnouncementViewController: UIViewController {
     
     @IBOutlet weak var numberOfItemsTF: UITextField!
 
-    @IBAction func requestBTN(sender: AnyObject) {
+    @IBAction func requestBTN(_ sender: AnyObject) {
         displayMessage("Your Request has been submitted")
     }
     
     
     
     
-    func displayMessage(message:String) {
+    func displayMessage(_ message:String) {
         let alert = UIAlertController(title: "", message: message,
-                                      preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title:"OK", style: .Default, handler: nil)
+                                      preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title:"OK", style: .default, handler: nil)
         alert.addAction(defaultAction)
-        self.presentViewController(alert,animated:true, completion:nil)
+        self.present(alert,animated:true, completion:nil)
     }
     /*
     // MARK: - Navigation

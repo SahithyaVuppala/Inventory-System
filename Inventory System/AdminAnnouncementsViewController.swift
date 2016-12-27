@@ -22,20 +22,20 @@ class AdminAnnouncementsViewController: UIViewController {
     }
     
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(_ tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     
     
     var i = 0
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         var cell:UITableViewCell!
-        cell = tableView.dequeueReusableCellWithIdentifier("adminAnnouncement",forIndexPath: indexPath)
+        cell = tableView.dequeueReusableCell(withIdentifier: "adminAnnouncement",for: indexPath)
         cell.textLabel?.text = "Announcement \(i+1)"
         i += 2
         //cell.detailTextLabel?.text = "Pending for approval"
@@ -55,7 +55,7 @@ class AdminAnnouncementsViewController: UIViewController {
      */
     
     
-    @IBAction func unwindToCancel(sender:UIStoryboardSegue){
+    @IBAction func unwindToCancel(_ sender:UIStoryboardSegue){
         
     }
 

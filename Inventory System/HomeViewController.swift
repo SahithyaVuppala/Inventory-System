@@ -21,21 +21,21 @@ class HomeViewController: UIViewController {
     }
     
     
-    @IBAction func userBTN(sender: AnyObject) {
+    @IBAction func userBTN(_ sender: AnyObject) {
         
         // Action related to user button
     }
     
     
-    @IBAction func guestBTN(sender: AnyObject) {
+    @IBAction func guestBTN(_ sender: AnyObject) {
         
         // Action related to guest
     }
 
-    @IBAction func adminBTN(sender: AnyObject) {
+    @IBAction func adminBTN(_ sender: AnyObject) {
     }
     
-    @IBAction func unwindBackToHomeVC(sender:UIStoryboardSegue){
+    @IBAction func unwindBackToHomeVC(_ sender:UIStoryboardSegue){
         //sender.sourceViewController as! AdminLoginViewController
     }
 

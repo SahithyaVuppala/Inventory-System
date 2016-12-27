@@ -21,19 +21,19 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
 
     var i = 0
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell:UITableViewCell!
-        cell = tableView.dequeueReusableCellWithIdentifier("historyAnnouncement",forIndexPath: indexPath)
+        cell = tableView.dequeueReusableCell(withIdentifier: "historyAnnouncement",for: indexPath)
         cell.textLabel?.text = "Announcement \(i+2)"
         i += 2
         //cell.detailTextLabel?.text = "Pending for approval"
@@ -43,7 +43,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // ???? Action should be performed when we click on each row
         
         
@@ -53,13 +53,13 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     
-    @IBAction func backToHistory(sender: UIStoryboardSegue){
-        sender.sourceViewController as! BillingViewController
+    @IBAction func backToHistory(_ sender: UIStoryboardSegue){
+        sender.source as! BillingViewController
     }
 
     /*

@@ -34,7 +34,7 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
         // Do any additional setup after loading the view.
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
@@ -44,14 +44,14 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func browseBTN(sender: AnyObject) {
+    @IBAction func browseBTN(_ sender: AnyObject) {
 //        
 //        imagePicker.allowsEditing = false
 //        imagePicker.sourceType = .PhotoLibrary
 //        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func AddBTN(sender: AnyObject) {
+    @IBAction func AddBTN(_ sender: AnyObject) {
         
         let announcement = PFObject(className: "Announcements")
         announcement["name"] = productNameTF.text
@@ -70,7 +70,7 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
 //        
 //        announcement["image"] = imageFile
         
-        announcement.saveInBackgroundWithBlock({ (success, error) -> Void in
+        announcement.saveInBackground(block: { (success, error) -> Void in
             if success {
                 self.displayAlertWithTitle("Success!",
                     message:"Announcement saved.")
@@ -101,11 +101,11 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
 //        dismissViewControllerAnimated(true, completion: nil)
 //    }
     
-    func displayAlertWithTitle(title:String, message:String){
-        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .Default, handler: nil)
+    func displayAlertWithTitle(_ title:String, message:String){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(defaultAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*

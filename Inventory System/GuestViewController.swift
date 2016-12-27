@@ -13,6 +13,10 @@ class GuestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let backBTN = UIBarButtonItem()
+        backBTN.title = "Back"
+        navigationItem.backBarButtonItem = backBTN
+        
         // Do any additional setup after loading the view.
     }
 
@@ -22,11 +26,15 @@ class GuestViewController: UIViewController {
     }
     
 
-    @IBAction func signUpBTN(sender: AnyObject) {
+    @IBAction func signUpBTN(_ sender: AnyObject) {
         
         // Action related to sign up button
         
     }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

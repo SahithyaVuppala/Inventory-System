@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTF: UITextField!
     
    
-    @IBAction func submitBTN(sender: AnyObject) {
+    @IBAction func submitBTN(_ sender: AnyObject) {
         let userName = nameTF!.text
         let userEmail = emailTF!.text
         let username = usernameTF!.text
@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
         
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        if emailTest.evaluateWithObject(userEmail) {
+        if emailTest.evaluate(with: userEmail) {
             // Do nothing continue forward
         }
         else {
@@ -58,7 +58,7 @@ class SignUpViewController: UIViewController {
         myUser.email = userEmail
         myUser.setObject(userName!, forKey: "Full_Name")
         
-        myUser.signUpInBackgroundWithBlock( {
+        myUser.signUpInBackground( block: {
             
             (success, error) -> Void in
             
@@ -104,8 +104,9 @@ class SignUpViewController: UIViewController {
     }
     
     
-    @IBAction func cancelBTN(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelBTN(_ sender: AnyObject) {
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -120,42 +121,42 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func displayMyAlertMessage(userMessage:String) {
+    func displayMyAlertMessage(_ userMessage:String) {
         
-        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.alert)
         
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
         
         myAlert.addAction(okAction)
-        self.presentViewController(myAlert, animated: true, completion: nil)
+        self.present(myAlert, animated: true, completion: nil)
         
     }
     
-    func displayAlertWithTitle(title:String, message:String){
-        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .Default, handler: nil)
+    func displayAlertWithTitle(_ title:String, message:String){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(defaultAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
-    func displayMessage(theMesssage:String)
+    func displayMessage(_ theMesssage:String)
         
     {
         
         // Display alert message with confirmation.
         
-        var myAlert = UIAlertController(title:"User Registration is Successful", message:theMesssage, preferredStyle: UIAlertControllerStyle.Alert)
+        let myAlert = UIAlertController(title:"User Registration is Successful", message:theMesssage, preferredStyle: UIAlertControllerStyle.alert)
         
-        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.Default){ action in
+        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.default){ action in
             
-            self.dismissViewControllerAnimated(true, completion:nil)
+            self.dismiss(animated: true, completion:nil)
             
         }
         
         myAlert.addAction(okAction)
         
-        self.presentViewController(myAlert, animated:true, completion:nil)
+        self.present(myAlert, animated:true, completion:nil)
         
     }
     

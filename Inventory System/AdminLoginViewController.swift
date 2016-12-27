@@ -16,7 +16,7 @@ class AdminLoginViewController: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     
     
-    @IBAction func submitBTN(sender: AnyObject) {
+    @IBAction func submitBTN(_ sender: AnyObject) {
         
         let username = usernameTF.text!
         
@@ -34,7 +34,7 @@ class AdminLoginViewController: UIViewController {
             
             
             
-            self.performSegueWithIdentifier("adminLoginSegue", sender: nil)
+            self.performSegue(withIdentifier: "adminLoginSegue", sender: nil)
             
             
             
@@ -46,7 +46,7 @@ class AdminLoginViewController: UIViewController {
         
     }
 
-    @IBAction func forgotPasswordBTN(sender: AnyObject){
+    @IBAction func forgotPasswordBTN(_ sender: AnyObject){
     }
     
     override func viewDidLoad() {
@@ -61,7 +61,7 @@ class AdminLoginViewController: UIViewController {
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Get the new view controller using segue.destinationViewController.
         
@@ -73,13 +73,13 @@ class AdminLoginViewController: UIViewController {
             
             
             
-            if let destinationTabBar = segue.destinationViewController as? UITabBarController {
+            if let destinationTabBar = segue.destination as? UITabBarController {
                 
                 
                 
-                destinationTabBar.viewControllers?.removeAtIndex(1)
+                destinationTabBar.viewControllers?.remove(at: 1)
                 
-                destinationTabBar.viewControllers?.removeAtIndex(0)
+                destinationTabBar.viewControllers?.remove(at: 0)
                 
                 
                 
@@ -91,15 +91,15 @@ class AdminLoginViewController: UIViewController {
     
     
     
-    func displayAlertWithTitle(title:String, message:String){
+    func displayAlertWithTitle(_ title:String, message:String){
         
-        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
         
         alert.addAction(defaultAction)
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
