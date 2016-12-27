@@ -10,7 +10,6 @@
 		13AEE68D1DFA427C001E36BA /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13AEE68C1DFA427C001E36BA /* images.jpg */; };
 		13E18B7A1DFA59EF00578346 /* imageedit_5_9934407718.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */; };
 		537C09D51E00AD6F002382C1 /* Announcements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C09D41E00AD6F002382C1 /* Announcements.swift */; };
-		5383359B1DF78A0A00DCD0D7 /* Parse-iOS in Resources */ = {isa = PBXBuildFile; fileRef = 5383359A1DF78A0A00DCD0D7 /* Parse-iOS */; };
 		538893E51DF528F800E2628E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */; };
 		53A208D01DF8ABBC0052BB9D /* Businessman Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */; };
 		53A208D21DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A208D11DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift */; };
@@ -56,7 +55,6 @@
 		13AEE68C1DFA427C001E36BA /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
 		13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageedit_5_9934407718.jpg; sourceTree = "<group>"; };
 		537C09D41E00AD6F002382C1 /* Announcements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcements.swift; sourceTree = "<group>"; };
-		5383359A1DF78A0A00DCD0D7 /* Parse-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Parse-iOS"; sourceTree = "<group>"; };
 		538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Businessman Filled-100.png"; sourceTree = "<group>"; };
 		53A208D11DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminAnnouncementsViewController.swift; sourceTree = "<group>"; };
@@ -67,8 +65,6 @@
 		53A208DF1DF8BD570052BB9D /* Clock25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clock25.png; sourceTree = "<group>"; };
 		53A208E31DF8BEA50052BB9D /* Clock-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clock-35.png"; sourceTree = "<group>"; };
 		53AA6BB61DF9F395009D5915 /* AdminLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
-		53B9CD741DD90F1B004BCC34 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		53B9CD761DD90F35004BCC34 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		53B9CD781DD90F89004BCC34 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		53B9CD791DD90F89004BCC34 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		53B9CD7A1DD90F89004BCC34 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -207,7 +203,6 @@
 		CE360BB91DAAC873004E45CC = {
 			isa = PBXGroup;
 			children = (
-				5383359A1DF78A0A00DCD0D7 /* Parse-iOS */,
 				5DFE54901E123B8400BCF019 /* Frameworks */,
 				CE360BC41DAAC873004E45CC /* Inventory System */,
 				CE360BC31DAAC873004E45CC /* Products */,
@@ -229,25 +224,15 @@
 				CE360BC91DAAC873004E45CC /* Main.storyboard */,
 				CE360BC71DAAC873004E45CC /* HomeViewController.swift */,
 				538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */,
-				CE7D4BFC1DC538AB00FA9078 /* Client */,
+				5DFE548E1E1236B200BCF019 /* Images */,
 				5DFE548F1E1236CE00BCF019 /* Guest */,
 				5DFE548C1E1235DD00BCF019 /* User */,
-				5DFE548E1E1236B200BCF019 /* Images */,
 				5DFE548D1E12367800BCF019 /* Admin */,
 				CE360BCC1DAAC873004E45CC /* Assets.xcassets */,
 				CE360BCE1DAAC873004E45CC /* LaunchScreen.storyboard */,
 				CE360BD11DAAC873004E45CC /* Info.plist */,
 			);
 			path = "Inventory System";
-			sourceTree = "<group>";
-		};
-		CE7D4BFC1DC538AB00FA9078 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				53B9CD761DD90F35004BCC34 /* Bolts.framework */,
-				53B9CD741DD90F1B004BCC34 /* Parse.framework */,
-			);
-			name = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,7 +298,6 @@
 				53A208E01DF8BD570052BB9D /* Clock25.png in Resources */,
 				CE360BD91DAAC9B1004E45CC /* Gender Neutral User Filled-25.png in Resources */,
 				CE360BCD1DAAC873004E45CC /* Assets.xcassets in Resources */,
-				5383359B1DF78A0A00DCD0D7 /* Parse-iOS in Resources */,
 				53A208D81DF8BB7E0052BB9D /* Star-25.png in Resources */,
 				53A208D01DF8ABBC0052BB9D /* Businessman Filled-100.png in Resources */,
 				CE360BDE1DAACA83004E45CC /* User-100.png in Resources */,
