@@ -50,10 +50,6 @@
 		CE7AA1351DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7AA1341DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png */; };
 		CE7AA1371DB2D57D009AE29A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AA1361DB2D57D009AE29A /* HistoryViewController.swift */; };
 		CE7D4BFB1DC5373A00FA9078 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4BFA1DC5373A00FA9078 /* SignUpViewController.swift */; };
-		CE7D4BFE1DC53B8400FA9078 /* adminStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7D4BFD1DC53B8400FA9078 /* adminStoryBoard.storyboard */; };
-		CE7D4C001DC542BC00FA9078 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4BFF1DC542BC00FA9078 /* AdminTableViewController.swift */; };
-		CE7D4C021DC5463800FA9078 /* AdminAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4C011DC5463800FA9078 /* AdminAnnouncementViewController.swift */; };
-		CE7D4C041DC5484B00FA9078 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4C031DC5484B00FA9078 /* Announcement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,10 +104,6 @@
 		CE7AA1341DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-iphone 6s 16gb-rose gold-450x350.png"; sourceTree = "<group>"; };
 		CE7AA1361DB2D57D009AE29A /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		CE7D4BFA1DC5373A00FA9078 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		CE7D4BFD1DC53B8400FA9078 /* adminStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = adminStoryBoard.storyboard; sourceTree = "<group>"; };
-		CE7D4BFF1DC542BC00FA9078 /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
-		CE7D4C011DC5463800FA9078 /* AdminAnnouncementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminAnnouncementViewController.swift; sourceTree = "<group>"; };
-		CE7D4C031DC5484B00FA9078 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +129,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE360BB91DAAC873004E45CC = {
+		5DFE548C1E1235DD00BCF019 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				5383359A1DF78A0A00DCD0D7 /* Parse-iOS */,
+				CE354A391DB01190003E2412 /* PromptViewController.swift */,
+				CE354A411DB02AFF003E2412 /* BillingViewController.swift */,
+				CE7AA1361DB2D57D009AE29A /* HistoryViewController.swift */,
+				CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */,
+				CE354A3F1DB02416003E2412 /* AnnouncementViewController.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		5DFE548D1E12367800BCF019 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				53A208D11DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift */,
+				53A208D31DF8B00A0052BB9D /* AdminRecentViewController.swift */,
+				CE3C93671DFB5D700024024E /* NewAnnouncementViewController.swift */,
+				53AA6BB61DF9F395009D5915 /* AdminLoginViewController.swift */,
+				537C09D41E00AD6F002382C1 /* Announcements.swift */,
+			);
+			name = Admin;
+			sourceTree = "<group>";
+		};
+		5DFE548E1E1236B200BCF019 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */,
+				53A208D71DF8BB7E0052BB9D /* Star-25.png */,
+				53A208DF1DF8BD570052BB9D /* Clock25.png */,
+				13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */,
+				13AEE68C1DFA427C001E36BA /* images.jpg */,
+				53A208E31DF8BEA50052BB9D /* Clock-35.png */,
+				CE7AA1341DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png */,
+				53A208DD1DF8BCA30052BB9D /* Clock-64.png */,
+				53A208DB1DF8BC5A0052BB9D /* Clock-48.png */,
+				CE360BD71DAAC9B1004E45CC /* Gender Neutral User Filled-25.png */,
+				CE360BDD1DAACA83004E45CC /* User-100.png */,
+				CE360BDF1DAACAB7004E45CC /* Guest Male-96.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		5DFE548F1E1236CE00BCF019 /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				CE354A3B1DB01292003E2412 /* GuestViewController.swift */,
+				CE7D4BFA1DC5373A00FA9078 /* SignUpViewController.swift */,
+			);
+			name = Guest;
+			sourceTree = "<group>";
+		};
+		5DFE54901E123B8400BCF019 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
 				53DCCD9F1DDAB6E200A170CC /* Parse.framework */,
 				53DCCD9D1DDAB6CF00A170CC /* Bolts.framework */,
 				53B9CD861DD91035004BCC34 /* CoreGraphics.framework */,
@@ -157,6 +200,15 @@
 				53B9CD7B1DD90F89004BCC34 /* AVKit.framework */,
 				53B9CD7D1DD90F89004BCC34 /* CarrierBundleUtilities.tbd */,
 				53B9CD7E1DD90F89004BCC34 /* CFNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE360BB91DAAC873004E45CC = {
+			isa = PBXGroup;
+			children = (
+				5383359A1DF78A0A00DCD0D7 /* Parse-iOS */,
+				5DFE54901E123B8400BCF019 /* Frameworks */,
 				CE360BC41DAAC873004E45CC /* Inventory System */,
 				CE360BC31DAAC873004E45CC /* Products */,
 			);
@@ -173,38 +225,18 @@
 		CE360BC41DAAC873004E45CC /* Inventory System */ = {
 			isa = PBXGroup;
 			children = (
-				CE7D4BFC1DC538AB00FA9078 /* Client */,
 				CE360BC51DAAC873004E45CC /* AppDelegate.swift */,
-				CE360BC71DAAC873004E45CC /* HomeViewController.swift */,
-				CE354A411DB02AFF003E2412 /* BillingViewController.swift */,
-				CE354A391DB01190003E2412 /* PromptViewController.swift */,
-				CE7AA1361DB2D57D009AE29A /* HistoryViewController.swift */,
-				CE354A3B1DB01292003E2412 /* GuestViewController.swift */,
-				538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */,
-				CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */,
-				CE354A3F1DB02416003E2412 /* AnnouncementViewController.swift */,
-				53A208D71DF8BB7E0052BB9D /* Star-25.png */,
-				53A208DF1DF8BD570052BB9D /* Clock25.png */,
-				13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */,
-				13AEE68C1DFA427C001E36BA /* images.jpg */,
-				53A208E31DF8BEA50052BB9D /* Clock-35.png */,
-				CE7AA1341DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png */,
 				CE360BC91DAAC873004E45CC /* Main.storyboard */,
-				53A208D11DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift */,
-				53A208D31DF8B00A0052BB9D /* AdminRecentViewController.swift */,
-				CE7D4BFA1DC5373A00FA9078 /* SignUpViewController.swift */,
-				CE3C93671DFB5D700024024E /* NewAnnouncementViewController.swift */,
+				CE360BC71DAAC873004E45CC /* HomeViewController.swift */,
+				538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */,
+				CE7D4BFC1DC538AB00FA9078 /* Client */,
+				5DFE548F1E1236CE00BCF019 /* Guest */,
+				5DFE548C1E1235DD00BCF019 /* User */,
+				5DFE548E1E1236B200BCF019 /* Images */,
+				5DFE548D1E12367800BCF019 /* Admin */,
 				CE360BCC1DAAC873004E45CC /* Assets.xcassets */,
-				53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */,
-				53A208DD1DF8BCA30052BB9D /* Clock-64.png */,
-				53A208DB1DF8BC5A0052BB9D /* Clock-48.png */,
-				CE360BD71DAAC9B1004E45CC /* Gender Neutral User Filled-25.png */,
-				CE360BDD1DAACA83004E45CC /* User-100.png */,
-				CE360BDF1DAACAB7004E45CC /* Guest Male-96.png */,
 				CE360BCE1DAAC873004E45CC /* LaunchScreen.storyboard */,
 				CE360BD11DAAC873004E45CC /* Info.plist */,
-				53AA6BB61DF9F395009D5915 /* AdminLoginViewController.swift */,
-				537C09D41E00AD6F002382C1 /* Announcements.swift */,
 			);
 			path = "Inventory System";
 			sourceTree = "<group>";
@@ -214,10 +246,6 @@
 			children = (
 				53B9CD761DD90F35004BCC34 /* Bolts.framework */,
 				53B9CD741DD90F1B004BCC34 /* Parse.framework */,
-				CE7D4BFD1DC53B8400FA9078 /* adminStoryBoard.storyboard */,
-				CE7D4BFF1DC542BC00FA9078 /* AdminTableViewController.swift */,
-				CE7D4C011DC5463800FA9078 /* AdminAnnouncementViewController.swift */,
-				CE7D4C031DC5484B00FA9078 /* Announcement.swift */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -287,7 +315,6 @@
 				CE360BCD1DAAC873004E45CC /* Assets.xcassets in Resources */,
 				5383359B1DF78A0A00DCD0D7 /* Parse-iOS in Resources */,
 				53A208D81DF8BB7E0052BB9D /* Star-25.png in Resources */,
-				CE7D4BFE1DC53B8400FA9078 /* adminStoryBoard.storyboard in Resources */,
 				53A208D01DF8ABBC0052BB9D /* Businessman Filled-100.png in Resources */,
 				CE360BDE1DAACA83004E45CC /* User-100.png in Resources */,
 				CE360BCB1DAAC873004E45CC /* Main.storyboard in Resources */,
@@ -308,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7D4C041DC5484B00FA9078 /* Announcement.swift in Sources */,
 				CE354A421DB02AFF003E2412 /* BillingViewController.swift in Sources */,
 				CE354A3A1DB01190003E2412 /* PromptViewController.swift in Sources */,
 				CE360BC81DAAC873004E45CC /* HomeViewController.swift in Sources */,
@@ -317,9 +343,7 @@
 				CE3C93681DFB5D700024024E /* NewAnnouncementViewController.swift in Sources */,
 				CE354A3C1DB01292003E2412 /* GuestViewController.swift in Sources */,
 				537C09D51E00AD6F002382C1 /* Announcements.swift in Sources */,
-				CE7D4C001DC542BC00FA9078 /* AdminTableViewController.swift in Sources */,
 				CE354A401DB02416003E2412 /* AnnouncementViewController.swift in Sources */,
-				CE7D4C021DC5463800FA9078 /* AdminAnnouncementViewController.swift in Sources */,
 				53AA6BB71DF9F395009D5915 /* AdminLoginViewController.swift in Sources */,
 				53A208D21DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift in Sources */,
 				CE7D4BFB1DC5373A00FA9078 /* SignUpViewController.swift in Sources */,

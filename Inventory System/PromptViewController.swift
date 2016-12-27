@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import Bolts
 
-class PromptViewController: UIViewController {
+class UserLogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

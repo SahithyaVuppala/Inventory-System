@@ -256,13 +256,6 @@
                                     <action selector="submitBTN:" destination="nxs-Oq-NOB" eventType="touchUpInside" id="1jN-vu-siH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-Mail Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTx-f0-7va">
-                                <rect key="frame" x="15" y="133" width="131" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYU-bN-mcF">
                                 <rect key="frame" x="16" y="192" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -292,6 +285,13 @@
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-Mail Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTx-f0-7va">
+                                <rect key="frame" x="15" y="136" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -310,11 +310,11 @@
                                 <exclude reference="TTM-1P-ujy"/>
                                 <exclude reference="W5Y-dl-GLC"/>
                                 <exclude reference="1Y1-Jt-zhA"/>
-                                <exclude reference="bTx-f0-7va"/>
                                 <exclude reference="TYU-bN-mcF"/>
                                 <exclude reference="6vh-NZ-yer"/>
                                 <exclude reference="VCj-Za-gd8"/>
                                 <exclude reference="BFx-YR-mki"/>
+                                <exclude reference="bTx-f0-7va"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="9Jf-YY-qQz"/>
@@ -333,11 +333,11 @@
                                 <include reference="TTM-1P-ujy"/>
                                 <include reference="W5Y-dl-GLC"/>
                                 <include reference="1Y1-Jt-zhA"/>
-                                <include reference="bTx-f0-7va"/>
                                 <include reference="TYU-bN-mcF"/>
                                 <include reference="6vh-NZ-yer"/>
                                 <include reference="VCj-Za-gd8"/>
                                 <include reference="BFx-YR-mki"/>
+                                <include reference="bTx-f0-7va"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="9Jf-YY-qQz"/>
@@ -488,7 +488,7 @@
         <!--Welcome To Inventory System-->
         <scene sceneID="vly-45-1gK">
             <objects>
-                <viewController id="P10-5j-uOx" customClass="PromptViewController" customModule="Inventory_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="P10-5j-uOx" customClass="UserLogInViewController" customModule="Inventory_System" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qqr-CQ-uqM"/>
                         <viewControllerLayoutGuide type="bottom" id="p3q-zx-1QX"/>
@@ -571,7 +571,7 @@
                                 <state key="normal" title="New User ?"/>
                                 <connections>
                                     <action selector="newUserBTN:" destination="P10-5j-uOx" eventType="touchUpInside" id="mXD-TM-2tI"/>
-                                    <segue destination="nxs-Oq-NOB" kind="presentation" id="ITA-Ac-cke"/>
+                                    <segue destination="nxs-Oq-NOB" kind="show" id="7Hz-xG-wbk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -954,7 +954,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOn-jc-yKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2447" y="349"/>
+            <point key="canvasLocation" x="2368" y="320"/>
         </scene>
         <!--Title-->
         <scene sceneID="KVq-WT-ky3">
@@ -1465,7 +1465,7 @@
         <image name="imageedit_5_9934407718.jpg" width="240" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c1y-Z6-dWe"/>
-        <segue reference="wGo-xk-uy2"/>
+        <segue reference="7Hz-xG-wbk"/>
+        <segue reference="Hig-BY-cxX"/>
     </inferredMetricsTieBreakers>
 </document>
