@@ -32,6 +32,7 @@
 		53B9CD951DD91035004BCC34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B9CD8D1DD91035004BCC34 /* SystemConfiguration.framework */; };
 		53DCCD9E1DDAB6CF00A170CC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DCCD9D1DDAB6CF00A170CC /* Bolts.framework */; };
 		53DCCDA01DDAB6E200A170CC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DCCD9F1DDAB6E200A170CC /* Parse.framework */; };
+		5D2E1ABE1E157E6E00D9D0C2 /* ParseOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2E1ABD1E157E6E00D9D0C2 /* ParseOperations.swift */; };
 		CE354A3A1DB01190003E2412 /* PromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A391DB01190003E2412 /* PromptViewController.swift */; };
 		CE354A3C1DB01292003E2412 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A3B1DB01292003E2412 /* GuestViewController.swift */; };
 		CE354A3E1DB0141E003E2412 /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */; };
@@ -81,6 +82,7 @@
 		53B9CD8D1DD91035004BCC34 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		53DCCD9D1DDAB6CF00A170CC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		53DCCD9F1DDAB6E200A170CC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		5D2E1ABD1E157E6E00D9D0C2 /* ParseOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseOperations.swift; sourceTree = "<group>"; };
 		CE354A391DB01190003E2412 /* PromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptViewController.swift; sourceTree = "<group>"; };
 		CE354A3B1DB01292003E2412 /* GuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
 		CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D094B091E1355F300C49A9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				537C09D41E00AD6F002382C1 /* Announcements.swift */,
+				5D2E1ABD1E157E6E00D9D0C2 /* ParseOperations.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5DFE548C1E1235DD00BCF019 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +155,6 @@
 				53A208D31DF8B00A0052BB9D /* AdminRecentViewController.swift */,
 				CE3C93671DFB5D700024024E /* NewAnnouncementViewController.swift */,
 				53AA6BB61DF9F395009D5915 /* AdminLoginViewController.swift */,
-				537C09D41E00AD6F002382C1 /* Announcements.swift */,
 			);
 			name = Admin;
 			sourceTree = "<group>";
@@ -228,6 +238,7 @@
 				5DFE548F1E1236CE00BCF019 /* Guest */,
 				5DFE548C1E1235DD00BCF019 /* User */,
 				5DFE548D1E12367800BCF019 /* Admin */,
+				5D094B091E1355F300C49A9D /* Model */,
 				CE360BCC1DAAC873004E45CC /* Assets.xcassets */,
 				CE360BCE1DAAC873004E45CC /* LaunchScreen.storyboard */,
 				CE360BD11DAAC873004E45CC /* Info.plist */,
@@ -334,6 +345,7 @@
 				538893E51DF528F800E2628E /* ForgotPasswordViewController.swift in Sources */,
 				CE354A3E1DB0141E003E2412 /* FeaturedViewController.swift in Sources */,
 				CE7AA1371DB2D57D009AE29A /* HistoryViewController.swift in Sources */,
+				5D2E1ABE1E157E6E00D9D0C2 /* ParseOperations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,25 +10,38 @@ import UIKit
 
 class AnnouncementViewController: UIViewController {
 
+    
+    @IBOutlet weak var numberOfItemsTF: UITextField!
+
+    @IBOutlet weak var productDescriptionTV: UITextView!
+    
+    var numberOfProducts:Int = Int()
+    var aboutProduct:String = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        productDescriptionTV.text = aboutProduct
 
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBOutlet weak var numberOfItemsTF: UITextField!
-
     @IBAction func requestBTN(_ sender: AnyObject) {
-        displayMessage("Your Request has been submitted")
+        let userNumber:Int? = Int(numberOfItemsTF.text!)
+        if userNumber == nil || userNumber! > numberOfProducts{
+            displayMessage("Invalid value")
+        }
+        else{
+            displayMessage("Your Request has been submitted")
+        }
+        
     }
-    
-    
     
     
     func displayMessage(_ message:String) {

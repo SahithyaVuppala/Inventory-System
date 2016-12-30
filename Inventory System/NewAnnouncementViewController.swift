@@ -72,6 +72,10 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
         
         announcement.saveInBackground(block: { (success, error) -> Void in
             if success {
+                
+                // I wrote this line because the added item is not showing when it is successfully added, We have to fix this.
+                ParseOperaions.retrieveProducts()
+                
                 self.displayAlertWithTitle("Success!",
                     message:"Announcement saved.")
             } else {

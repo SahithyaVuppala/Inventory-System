@@ -28,7 +28,6 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func guestBTN(_ sender: AnyObject) {
-        
         // Action related to guest
     }
 

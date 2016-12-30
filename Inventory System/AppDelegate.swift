@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(with: configuration)
         
         Announcements.registerSubclass()
+        
+        // This statement is used to load the table(announcements) for the first time.
+        ParseOperaions.retrieveProducts()
+
 
         return true
     }
