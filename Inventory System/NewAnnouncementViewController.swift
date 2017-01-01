@@ -70,6 +70,9 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
 //        
 //        announcement["image"] = imageFile
         
+        
+        
+        
         announcement.saveInBackground(block: { (success, error) -> Void in
             if success {
                 

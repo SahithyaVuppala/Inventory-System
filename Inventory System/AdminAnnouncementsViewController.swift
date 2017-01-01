@@ -49,7 +49,9 @@ class AdminAnnouncementsViewController: UIViewController {
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         var cell:UITableViewCell!
         cell = tableView.dequeueReusableCell(withIdentifier: "adminAnnouncement",for: indexPath)
-        cell.textLabel?.text = products[indexPath.row].name
+        //let productIMG = cell.viewWithTag(20) as! UIImageView
+        let productNameLBL = cell.viewWithTag(21) as! UILabel
+        productNameLBL.text = products[indexPath.row].name
         return cell
     }
     

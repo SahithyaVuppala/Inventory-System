@@ -45,16 +45,16 @@ class AdminLoginViewController: UIViewController {
         }
         
     }
-
+    
     @IBAction func forgotPasswordBTN(_ sender: AnyObject){
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -103,5 +103,5 @@ class AdminLoginViewController: UIViewController {
         
     }
     
-
+    
 }

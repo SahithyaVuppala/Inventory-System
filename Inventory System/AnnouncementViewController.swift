@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Parse
+import Bolts
+
 
 class AnnouncementViewController: UIViewController {
 
@@ -15,8 +18,14 @@ class AnnouncementViewController: UIViewController {
 
     @IBOutlet weak var productDescriptionTV: UITextView!
     
+    @IBOutlet weak var totalNoOfProducts: UILabel!
+    
+    @IBOutlet weak var productImage: UIImageView!
     var numberOfProducts:Int = Int()
     var aboutProduct:String = String()
+    var nameOfProduct:String = String()
+    static var nameOfUser:String = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,20 +33,30 @@ class AnnouncementViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         productDescriptionTV.text = aboutProduct
-
+        totalNoOfProducts.text = String(numberOfProducts)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func requestBTN(_ sender: AnyObject) {
-        let userNumber:Int? = Int(numberOfItemsTF.text!)
-        if userNumber == nil || userNumber! > numberOfProducts{
+        
+        let userEnteredValue:Int? = Int(numberOfItemsTF.text!)
+        if userEnteredValue == nil || userEnteredValue! < 0 || userEnteredValue! > numberOfProducts{
             displayMessage("Invalid value")
         }
         else{
+            let clientRequest = PFObject(className: "ClientRequests")
+            clientRequest["productName"] = self.nameOfProduct
+            clientRequest["userName"] = AnnouncementViewController.nameOfUser
+            clientRequest["productQuandity"] = userEnteredValue
+            clientRequest.saveInBackground(block: { (success, error) -> Void in
+                if success{
+                    ParseOperaions.retrieveRequests()
+                }
+            })
             displayMessage("Your Request has been submitted")
         }
         

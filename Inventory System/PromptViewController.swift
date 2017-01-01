@@ -58,6 +58,7 @@ class UserLogInViewController: UIViewController {
 //                let emailVerified = user!["emailVerified"]
 //                if emailVerified != nil && (emailVerified as! Bool) == true {
 //
+                AnnouncementViewController.nameOfUser = userName!
                 self.performSegue(withIdentifier: "tabBarSegue", sender: nil)
 //                if let destinationTabBar = tabBarSegue.destinationViewController as? UITabBarController {
 //                    

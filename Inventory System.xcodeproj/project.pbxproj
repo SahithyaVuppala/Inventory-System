@@ -32,6 +32,7 @@
 		53B9CD951DD91035004BCC34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B9CD8D1DD91035004BCC34 /* SystemConfiguration.framework */; };
 		53DCCD9E1DDAB6CF00A170CC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DCCD9D1DDAB6CF00A170CC /* Bolts.framework */; };
 		53DCCDA01DDAB6E200A170CC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DCCD9F1DDAB6E200A170CC /* Parse.framework */; };
+		5D13C4F61E16F7730055D6F6 /* ClientRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D13C4F51E16F7730055D6F6 /* ClientRequests.swift */; };
 		5D2E1ABE1E157E6E00D9D0C2 /* ParseOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2E1ABD1E157E6E00D9D0C2 /* ParseOperations.swift */; };
 		CE354A3A1DB01190003E2412 /* PromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A391DB01190003E2412 /* PromptViewController.swift */; };
 		CE354A3C1DB01292003E2412 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A3B1DB01292003E2412 /* GuestViewController.swift */; };
@@ -82,6 +83,7 @@
 		53B9CD8D1DD91035004BCC34 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		53DCCD9D1DDAB6CF00A170CC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		53DCCD9F1DDAB6E200A170CC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		5D13C4F51E16F7730055D6F6 /* ClientRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientRequests.swift; sourceTree = "<group>"; };
 		5D2E1ABD1E157E6E00D9D0C2 /* ParseOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseOperations.swift; sourceTree = "<group>"; };
 		CE354A391DB01190003E2412 /* PromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptViewController.swift; sourceTree = "<group>"; };
 		CE354A3B1DB01292003E2412 /* GuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				537C09D41E00AD6F002382C1 /* Announcements.swift */,
+				5D13C4F51E16F7730055D6F6 /* ClientRequests.swift */,
 				5D2E1ABD1E157E6E00D9D0C2 /* ParseOperations.swift */,
 			);
 			name = Model;
@@ -342,6 +345,7 @@
 				53AA6BB71DF9F395009D5915 /* AdminLoginViewController.swift in Sources */,
 				53A208D21DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift in Sources */,
 				CE7D4BFB1DC5373A00FA9078 /* SignUpViewController.swift in Sources */,
+				5D13C4F61E16F7730055D6F6 /* ClientRequests.swift in Sources */,
 				538893E51DF528F800E2628E /* ForgotPasswordViewController.swift in Sources */,
 				CE354A3E1DB0141E003E2412 /* FeaturedViewController.swift in Sources */,
 				CE7AA1371DB2D57D009AE29A /* HistoryViewController.swift in Sources */,

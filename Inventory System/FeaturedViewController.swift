@@ -17,7 +17,7 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
     var numProducts:Int = Int()
     
     var products:[Announcements] = []
-    
+        
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -49,6 +49,7 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
         
         var cell:UITableViewCell!
         cell = tableView.dequeueReusableCell(withIdentifier: "announcementCell",for: indexPath)
+        //let imageLBL = cell.viewWithTag(71) as! UIImageView!
         let announcementLBL:UILabel = cell.viewWithTag(70) as! UILabel
         announcementLBL.text = products[indexPath.row].name
         return cell
@@ -59,12 +60,15 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "announcementId"{
+            let announcementObjectVC = segue.destination as! AnnouncementViewController
+            //announcementObjectVC.numberOfProducts = numProducts
+            announcementObjectVC.numberOfProducts = products[(announcementsTV.indexPathForSelectedRow?.row)!].quantity
+            announcementObjectVC.aboutProduct = products[(announcementsTV.indexPathForSelectedRow?.row)!].productDescription
+            announcementObjectVC.navigationItem.title = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
+            announcementObjectVC.nameOfProduct = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
+        }
         
-        let announcementObjectVC = segue.destination as! AnnouncementViewController
-        announcementObjectVC.numberOfProducts = numProducts
-        announcementObjectVC.numberOfProducts = products[(announcementsTV.indexPathForSelectedRow?.row)!].quantity
-        announcementObjectVC.aboutProduct = products[(announcementsTV.indexPathForSelectedRow?.row)!].productDescription
-        announcementObjectVC.navigationItem.title = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
         
     }
     
