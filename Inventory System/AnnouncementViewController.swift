@@ -41,6 +41,29 @@ class AnnouncementViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func checkRequest() -> Bool {
+        var flag:Bool = false
+        var checkArray:[Bool] = []
+        for productObject in ParseOperaions.allRequests{
+            if productObject.productName == nameOfProduct && productObject.userName == AnnouncementViewController.nameOfUser {
+                flag = true
+                checkArray.append(flag)
+            }
+            else{
+                flag = false
+                checkArray.append(flag)
+            }
+        }
+        if checkArray.contains(true){
+            flag = true
+        }
+        else{
+            flag = false
+        }
+        return flag
+    }
+    
+    
     @IBAction func requestBTN(_ sender: AnyObject) {
         
         let userEnteredValue:Int? = Int(numberOfItemsTF.text!)
@@ -48,16 +71,23 @@ class AnnouncementViewController: UIViewController {
             displayMessage("Invalid value")
         }
         else{
-            let clientRequest = PFObject(className: "ClientRequests")
-            clientRequest["productName"] = self.nameOfProduct
-            clientRequest["userName"] = AnnouncementViewController.nameOfUser
-            clientRequest["productQuandity"] = userEnteredValue
-            clientRequest.saveInBackground(block: { (success, error) -> Void in
-                if success{
-                    ParseOperaions.retrieveRequests()
-                }
-            })
-            displayMessage("Your Request has been submitted")
+            
+            if checkRequest() {
+                displayMessage("You already requested for this product")
+            }
+            else{
+                let clientRequest = PFObject(className: "ClientRequests")
+                clientRequest["productName"] = self.nameOfProduct
+                clientRequest["userName"] = AnnouncementViewController.nameOfUser
+                clientRequest["productQuandity"] = userEnteredValue
+                clientRequest.saveInBackground(block: { (success, error) -> Void in
+                    if success{
+                        ParseOperaions.retrieveRequests()
+                    }
+                })
+                displayMessage("Your Request has been submitted")
+            }
+            
         }
         
     }
