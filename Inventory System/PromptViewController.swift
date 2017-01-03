@@ -41,6 +41,9 @@ class UserLogInViewController: UIViewController {
         let userName = userNameTF!.text
         let userPassword = passwordTF!.text
         
+        // Used to access user name in other view controllers
+
+        
         if userName!.isEmpty || userPassword!.isEmpty {
             
             displayMyAlertMessage("All the fields are required")

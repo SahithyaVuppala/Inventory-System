@@ -7,13 +7,38 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
+    @IBOutlet var historyTV: UITableView!
+    var numProducts:Int = Int()
+    var allProducts:[ClientRequests] = []
+    var userProducts:[ClientRequests] = []
+
+    
+    func retrieveUserProducts(userName:String){
+        ParseOperaions.retrieveRequests()
+        allProducts = ParseOperaions.allRequests
+        for userProduct in allProducts{
+            if userProduct.userName == userName{
+                userProducts.append(userProduct)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        userProducts.removeAll()
+        retrieveUserProducts(userName: AnnouncementViewController.nameOfUser)
+        historyTV.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,16 +51,18 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return userProducts.count
+//        return 5
     }
 
-    var i = 0
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell:UITableViewCell!
         cell = tableView.dequeueReusableCell(withIdentifier: "historyAnnouncement",for: indexPath)
-        cell.textLabel?.text = "Announcement \(i+2)"
-        i += 2
+        cell.textLabel?.text = userProducts[indexPath.row].productName
+        
+//        cell.textLabel?.text = "Manoj"
+        
         //cell.detailTextLabel?.text = "Pending for approval"
         //let announcementLBL:UILabel = cell.viewWithTag(100) as! UILabel
         //announcementLBL.text = "Announcement \(indexPath.row + 2)"

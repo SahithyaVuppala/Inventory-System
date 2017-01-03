@@ -645,21 +645,28 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YnR-gO-x0l">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historyAnnouncement" id="X2h-uB-bVx">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YnR-gO-x0l" id="Gsw-sE-RQH">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X2h-uB-bVx" id="pyT-Ct-d8h">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="N65-QQ-UGU" id="aMq-PB-Tjt"/>
+                            <outlet property="delegate" destination="N65-QQ-UGU" id="xSW-he-NOD"/>
+                        </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="History" image="Clock-35.png" id="nPI-AA-ukD"/>
                     <navigationItem key="navigationItem" id="OvA-fU-YqK"/>
+                    <connections>
+                        <outlet property="historyTV" destination="rh7-QT-JjD" id="WKJ-dX-yHT"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="3530.625" y="1258.75"/>
+            <point key="canvasLocation" x="3570" y="1303"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="8Gs-T0-ndt">
