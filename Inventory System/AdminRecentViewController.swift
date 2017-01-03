@@ -7,22 +7,27 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-
+    
     @IBOutlet weak var clientRequestsTV: UITableView!
     
     var clientRequests:[ClientRequests] = []
     var requestsSections:[String] = []
     var requestsDictionary:[String:[String]] = [String:[String]]()
-    
+    var requestQuandityDictionary:[String:[Int]] = [String:[Int]]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         requestsSections.removeAll()
@@ -30,15 +35,21 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
         clientRequests = ParseOperaions.allRequests
         for clientRequest in clientRequests{
             if let _ = requestsSections.index(of: clientRequest.productName){
-//                print("\(clientRequest.productName) is found")
+                //                print("\(clientRequest.productName) is found")
                 requestsDictionary[clientRequest.productName]!.append(clientRequest.userName)
+                
+                // Storing quandity values in this dictionary
+                requestQuandityDictionary[clientRequest.productName]!.append(clientRequest.productQuandity)
             }
             else{
-//                print("\(clientRequest.productName) is not found")
+                //                print("\(clientRequest.productName) is not found")
                 requestsSections.append(clientRequest.productName)
-//                print(clientRequest.userName)
-//                print(clientRequest.productName)
+                //                print(clientRequest.userName)
+                //                print(clientRequest.productName)
                 requestsDictionary[clientRequest.productName] = [clientRequest.userName]
+                
+                
+                requestQuandityDictionary[clientRequest.productName] = [clientRequest.productQuandity]
             }
             
         }
@@ -49,7 +60,7 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return requestsSections.count
@@ -63,6 +74,7 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
         return (requestsDictionary[requestsSections[section]]?.count)!
     }
     
+    var userName = String()
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "clientRequestsID", for: indexPath)
@@ -70,18 +82,23 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
         let userNameLBL = cell.viewWithTag(10) as! UILabel
         let resultArray = requestsDictionary[requestsSections[indexPath.section]]
         userNameLBL.text = resultArray?[indexPath.row]
+        userName = userNameLBL.text!
         return cell
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "requestSegueId"{
+            
+            let handleRequestVC = segue.destination as! HandleRequestViewController
+            handleRequestVC.productName = requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]
+            handleRequestVC.userName = (requestsDictionary[requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]]?[(clientRequestsTV.indexPathForSelectedRow?.row)!])!
+            handleRequestVC.quandity = (requestQuandityDictionary[requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]]?[(clientRequestsTV.indexPathForSelectedRow?.row)!])!
+        }
     }
-    */
-
+    
+    @IBAction func backToClientRequestVC(segue:UIStoryboardSegue){
+        // Do nothing
+    }
+    
 }
