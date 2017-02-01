@@ -79,7 +79,7 @@ class AnnouncementViewController: UIViewController {
                 let clientRequest = PFObject(className: "ClientRequests")
                 clientRequest["productName"] = self.nameOfProduct
                 clientRequest["userName"] = AnnouncementViewController.nameOfUser
-                clientRequest["productQuandity"] = userEnteredValue
+                clientRequest["productQuantity"] = userEnteredValue
                 clientRequest.saveInBackground(block: { (success, error) -> Void in
                     if success{
                         ParseOperaions.retrieveRequests()

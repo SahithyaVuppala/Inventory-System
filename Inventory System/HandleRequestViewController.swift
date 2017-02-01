@@ -22,7 +22,7 @@ class HandleRequestViewController: UIViewController {
     
     var productName = String()
     var userName = String()
-    var quandity = Int()
+    var quantity = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class HandleRequestViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         requestedProductName.text = productName
         requestedUserName.text = userName
-        requestedQunadityNeeded.text = String(quandity)
+        requestedQunadityNeeded.text = String(quantity)
     }
 
     override func didReceiveMemoryWarning() {
