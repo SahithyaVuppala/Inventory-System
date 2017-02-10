@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class FeaturedViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
@@ -55,6 +57,37 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
         return cell
         
     }
+    
+    
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if checkStatus(row: indexPath.row){
+            performSegue(withIdentifier: "billId", sender: nil)
+        }
+        else{
+            performSegue(withIdentifier: "announcementId", sender: nil)
+        }
+        
+    }
+    
+    
+    func checkStatus(row:Int) -> Bool{
+        var flag:Bool = false
+        
+        for productObject in ParseOperaions.allRequests{
+            if productObject.productName == products[row].name && productObject.userName == AnnouncementViewController.nameOfUser {
+                if productObject.productStatus == 1{
+                    flag = true
+                    break
+                }
+            }
+
+        }
+        return flag
+    }
+    
+    
+    
     
     // MARK: - Navigation
     

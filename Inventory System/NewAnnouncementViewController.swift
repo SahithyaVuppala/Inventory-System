@@ -53,38 +53,43 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
     
     @IBAction func AddBTN(_ sender: AnyObject) {
         
-        let announcement = PFObject(className: "Announcements")
-        announcement["name"] = productNameTF.text
-        announcement["productDescription"] = productDescriptionTF.text
-        announcement["quantity"] = Int(quantityTF.text!)!
-//        let imageFile:PFFile = PFFile(data: imageData)!
-        //announcement["image"] = ""
-        
-//        let imageFile:PFFile = PFFile(data: self.imageData)!
-//        dispatch_async(dispatch_get_main_queue(),{
-//        
-//
-//          announcement["image"] = imageFile
-//            
-//        })
-//        
-//        announcement["image"] = imageFile
-        
-        
-        
-        
-        announcement.saveInBackground(block: { (success, error) -> Void in
-            if success {
-                
-                // I wrote this line because the added item is not showing when it is successfully added, We have to fix this.
-                ParseOperaions.retrieveProducts()
-                
-                self.displayAlertWithTitle("Success!",
-                    message:"Announcement saved.")
-            } else {
-                print(error)
-            }
-        })
+        if productNameTF.text!.isEmpty || productDescriptionTF.text!.isEmpty || Int(quantityTF.text!) == nil || Int(quantityTF.text!)! <= 0{
+            displayMessage("Enter valid details")
+        }
+        else{
+            let announcement = PFObject(className: "Announcements")
+            announcement["name"] = productNameTF.text
+            announcement["productDescription"] = productDescriptionTF.text
+            announcement["quantity"] = Int(quantityTF.text!)!
+            //        let imageFile:PFFile = PFFile(data: imageData)!
+            //announcement["image"] = ""
+            
+            //        let imageFile:PFFile = PFFile(data: self.imageData)!
+            //        dispatch_async(dispatch_get_main_queue(),{
+            //
+            //
+            //          announcement["image"] = imageFile
+            //
+            //        })
+            //
+            //        announcement["image"] = imageFile
+            
+            
+            
+            
+            announcement.saveInBackground(block: { (success, error) -> Void in
+                if success {
+                    
+                    // I wrote this line because the added item is not showing when it is successfully added, We have to fix this.
+                    ParseOperaions.retrieveProducts()
+                    
+                    self.displayAlertWithTitle("Success!",
+                                               message:"Announcement saved.")
+                } else {
+                    print(error)
+                }
+            })
+        }
         
         
     }
@@ -110,10 +115,20 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
     
     func displayAlertWithTitle(_ title:String, message:String){
         let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default) {(_) -> Void in
+        	self.dismiss(animated: true, completion: nil)}
         alert.addAction(defaultAction)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func displayMessage(_ message:String) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title:"OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert,animated:true, completion:nil)
+    }
+    
+    
     
     /*
     // MARK: - Navigation

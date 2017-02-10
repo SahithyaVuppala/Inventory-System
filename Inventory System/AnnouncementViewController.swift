@@ -80,6 +80,7 @@ class AnnouncementViewController: UIViewController {
                 clientRequest["productName"] = self.nameOfProduct
                 clientRequest["userName"] = AnnouncementViewController.nameOfUser
                 clientRequest["productQuandity"] = userEnteredValue
+                //clientRequest["productStatus"] = 1
                 clientRequest.saveInBackground(block: { (success, error) -> Void in
                     if success{
                         ParseOperaions.retrieveRequests()
@@ -96,8 +97,20 @@ class AnnouncementViewController: UIViewController {
     func displayMessage(_ message:String) {
         let alert = UIAlertController(title: "", message: message,
                                       preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title:"OK", style: .default, handler: nil)
-        alert.addAction(defaultAction)
+        if message == "Your Request has been submitted"{
+            
+            let defaultAction = UIAlertAction(title:"OK", style: .default) {(_) -> Void in
+                self.dismiss(animated: true, completion: nil)}
+            alert.addAction(defaultAction)
+
+        }
+        else{
+            
+            let defaultAction = UIAlertAction(title:"OK", style: .default, handler: nil)
+            alert.addAction(defaultAction)
+
+        }
+        
         self.present(alert,animated:true, completion:nil)
     }
     /*
