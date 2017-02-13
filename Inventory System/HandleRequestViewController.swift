@@ -24,7 +24,7 @@ class HandleRequestViewController: UIViewController {
     
     var productName = String()
     var userName = String()
-    var quandity = Int()
+    var quantity = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()

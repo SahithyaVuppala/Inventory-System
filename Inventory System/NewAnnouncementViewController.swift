@@ -21,14 +21,14 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
     
     @IBOutlet weak var imageIV: UIImageView!
     
-//    let imagePicker = UIImagePickerController()
-//    
-//    var imageData:NSData! = NSData()
+    let imagePicker = UIImagePickerController()
+    
+    var imageDatas: NSData! = NSData()
     
     override func viewDidLoad() {
         self.navigationItem.title = "Add Product"
         super.viewDidLoad()
-//        imagePicker.delegate = self
+        imagePicker.delegate = self
 
 
         // Do any additional setup after loading the view.
@@ -44,6 +44,7 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
         // Dispose of any resources that can be recreated.
     }
     
+
     @IBAction func browseBTN(_ sender: AnyObject) {
 //        
 //        imagePicker.allowsEditing = false
@@ -126,24 +127,32 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
         
     }
     
-//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            imageIV.contentMode = .ScaleAspectFit
-//            imageIV.image = pickedImage
-//            
-//            imageData = UIImagePNGRepresentation(imageIV.image!)
-//        }
-//        
-////        if let pickedImageURL = info[UIImagePickerControllerMediaURL] as? String{
-////            imageTF.text = pickedImageURL
-////        }
-//        
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
-//    
-//    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // The info dictionary contains multiple representations of the image, and this uses the original.
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Set photoImageView to display the selected image.
+        imageIV.image = selectedImage
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
+
+    
+    func prepareImageForSaving(image:UIImage) {
+        // create NSData from UIImage
+        guard let imageData = UIImageJPEGRepresentation(image, 1) else {
+            // handle failed conversion
+            print("jpg error")
+            return
+        }
+        
+        self.saveImage(imageData: imageData as NSData)
+    }
+    
+    func saveImage(imageData: NSData) {
+        imageDatas = imageData
+    }
     
     func displayAlertWithTitle(_ title:String, message:String){
         let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

@@ -17,7 +17,7 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
     var clientRequests:[ClientRequests] = []
     var requestsSections:[String] = []
     var requestsDictionary:[String:[String]] = [String:[String]]()
-    var requestQuandityDictionary:[String:[Int]] = [String:[Int]]()
+    var requestQuantityDictionary:[String:[Int]] = [String:[Int]]()
 
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
                 requestsDictionary[clientRequest.productName]!.append(clientRequest.userName)
                 
                 // Storing quandity values in this dictionary
-                requestQuandityDictionary[clientRequest.productName]!.append(clientRequest.productQuandity)
+                requestQuantityDictionary[clientRequest.productName]!.append(clientRequest.productQuantity)
             }
             else{
                 //                print("\(clientRequest.productName) is not found")
@@ -49,7 +49,7 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
                 requestsDictionary[clientRequest.productName] = [clientRequest.userName]
                 
                 
-                requestQuandityDictionary[clientRequest.productName] = [clientRequest.productQuandity]
+                requestQuantityDictionary[clientRequest.productName] = [clientRequest.productQuantity]
             }
             
         }
@@ -93,7 +93,7 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
             let handleRequestVC = segue.destination as! HandleRequestViewController
             handleRequestVC.productName = requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]
             handleRequestVC.userName = (requestsDictionary[requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]]?[(clientRequestsTV.indexPathForSelectedRow?.row)!])!
-            handleRequestVC.quandity = (requestQuandityDictionary[requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]]?[(clientRequestsTV.indexPathForSelectedRow?.row)!])!
+            handleRequestVC.quantity = (requestQuantityDictionary[requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]]?[(clientRequestsTV.indexPathForSelectedRow?.row)!])!
         }
     }
     
