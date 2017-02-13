@@ -49,7 +49,55 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
 //        imagePicker.allowsEditing = false
 //        imagePicker.sourceType = .PhotoLibrary
 //        presentViewController(imagePicker, animated: true, completion: nil)
+        
+        
+        
+        let myActionSheet = UIAlertController(title: "Select image", message: "Where would you like to  add image from?", preferredStyle: UIAlertControllerStyle.actionSheet)
+        // choose from photos action button
+        let chooseAction = UIAlertAction(title: "Choose from photos", style: UIAlertActionStyle.default) { (action) in
+            let image = UIImagePickerController()
+            image.delegate = self
+            image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            image.allowsEditing = false
+            self.present(image, animated: true, completion: nil)
+        }
+        
+        // take photo action button
+        let takePhotoAction = UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.default) { (action) in
+            let image = UIImagePickerController()
+            image.delegate = self
+            image.sourceType = UIImagePickerControllerSourceType.camera
+            image.allowsEditing = false
+            self.present(image, animated: true, completion: nil)
+        }
+        
+        // cancel action button
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) in
+        }
+        
+        // add action buttons to action sheet
+        myActionSheet.addAction(chooseAction)
+        myActionSheet.addAction(takePhotoAction)
+        myActionSheet.addAction(cancelAction)
+        
+        // support iPads (popover view)
+        if let popoverController = myActionSheet.popoverPresentationController {
+            popoverController.sourceView = sender as? UIView
+            popoverController.sourceRect = sender.bounds
+        }
+        self.present(myActionSheet, animated: true, completion: nil)
+
+        
+        
     }
+    
+    
+    //This function assigns the selected image to the selectedIMG outlet
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        self.dismiss(animated: true, completion: nil)
+        self.imageIV.image = image
+    }
+    
     
     @IBAction func AddBTN(_ sender: AnyObject) {
         
@@ -61,22 +109,6 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
             announcement["name"] = productNameTF.text
             announcement["productDescription"] = productDescriptionTF.text
             announcement["quantity"] = Int(quantityTF.text!)!
-            //        let imageFile:PFFile = PFFile(data: imageData)!
-            //announcement["image"] = ""
-            
-            //        let imageFile:PFFile = PFFile(data: self.imageData)!
-            //        dispatch_async(dispatch_get_main_queue(),{
-            //
-            //
-            //          announcement["image"] = imageFile
-            //
-            //        })
-            //
-            //        announcement["image"] = imageFile
-            
-            
-            
-            
             announcement.saveInBackground(block: { (success, error) -> Void in
                 if success {
                     
