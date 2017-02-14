@@ -14,14 +14,41 @@ class ParseOperaions{
     
     // Used to retrieve the data from announcements table and will be displayed in corresponding tables
     static var allProducts:[Announcements] = []
+    static var allImages:[UIImage] = []
     class func retrieveProducts(){
+        
         let query = PFQuery(className: "Announcements")
         query.findObjectsInBackground {
+            
             (objects: [PFObject]?, error: Error?) -> Void in
             if error == nil {
+                
                 ParseOperaions.allProducts = objects as! [Announcements]
+                
+                
+                if let returnedObjects = objects{
+                    
+                    allImages = []
+                    
+                    for object in returnedObjects{
+                        
+                        let thumbNail = object["image"] as! PFFile
+                        thumbNail.getDataInBackground(block: {
+                            (imageData, error) -> Void in
+                            
+                            if (error == nil) {
+                                
+                                let image = UIImage(data:imageData!)
+                                self.allImages.append(image!)
+                                
+                            }
+                        })
+                    }
+                }
+                
             }
         }
+        
     }
     
     // Used to retrieve the data from the client requests table

@@ -39,7 +39,7 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
                 requestsDictionary[clientRequest.productName]!.append(clientRequest.userName)
                 
                 // Storing quandity values in this dictionary
-                requestQuantityDictionary[clientRequest.productName]!.append(clientRequest.productQuantity)
+                requestQuantityDictionary[clientRequest.productName]!.append(clientRequest.productQuandity)
             }
             else{
                 //                print("\(clientRequest.productName) is not found")
@@ -49,7 +49,7 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
                 requestsDictionary[clientRequest.productName] = [clientRequest.userName]
                 
                 
-                requestQuantityDictionary[clientRequest.productName] = [clientRequest.productQuantity]
+                requestQuantityDictionary[clientRequest.productName] = [clientRequest.productQuandity]
             }
             
         }

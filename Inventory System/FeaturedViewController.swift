@@ -19,6 +19,8 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
     var numProducts:Int = Int()
     
     var products:[Announcements] = []
+    
+    //var pImage:UIImage = UIImage()
         
     override func viewDidLoad() {
         
@@ -51,9 +53,11 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
         
         var cell:UITableViewCell!
         cell = tableView.dequeueReusableCell(withIdentifier: "announcementCell",for: indexPath)
-        //let imageLBL = cell.viewWithTag(71) as! UIImageView!
+        let imageLBL = cell.viewWithTag(71) as! UIImageView!
         let announcementLBL:UILabel = cell.viewWithTag(70) as! UILabel
         announcementLBL.text = products[indexPath.row].name
+        imageLBL?.image = ParseOperaions.allImages[indexPath.row]
+       // pImage = ParseOperaions.allImages[indexPath.row]
         return cell
         
     }
@@ -100,6 +104,8 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
             announcementObjectVC.aboutProduct = products[(announcementsTV.indexPathForSelectedRow?.row)!].productDescription
             announcementObjectVC.navigationItem.title = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
             announcementObjectVC.nameOfProduct = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
+           // announcementObjectVC.imageProduct = pImage
+            announcementObjectVC.imageProduct = ParseOperaions.allImages[(announcementsTV.indexPathForSelectedRow?.row)!]
         }
         
         

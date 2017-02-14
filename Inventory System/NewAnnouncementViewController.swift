@@ -21,14 +21,14 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
     
     @IBOutlet weak var imageIV: UIImageView!
     
-    let imagePicker = UIImagePickerController()
+    //let imagePicker = UIImagePickerController()
     
     var imageDatas: NSData! = NSData()
     
     override func viewDidLoad() {
         self.navigationItem.title = "Add Product"
         super.viewDidLoad()
-        imagePicker.delegate = self
+        //imagePicker.delegate = self
 
 
         // Do any additional setup after loading the view.
@@ -106,53 +106,69 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
             displayMessage("Enter valid details")
         }
         else{
-            let announcement = PFObject(className: "Announcements")
-            announcement["name"] = productNameTF.text
-            announcement["productDescription"] = productDescriptionTF.text
-            announcement["quantity"] = Int(quantityTF.text!)!
-            announcement.saveInBackground(block: { (success, error) -> Void in
-                if success {
-                    
-                    // I wrote this line because the added item is not showing when it is successfully added, We have to fix this.
-                    ParseOperaions.retrieveProducts()
-                    
-                    self.displayAlertWithTitle("Success!",
-                                               message:"Announcement saved.")
-                } else {
-                    print(error)
-                }
-            })
+            if imageIV.image != nil{
+                let announcement = PFObject(className: "Announcements")
+                announcement["name"] = productNameTF.text
+                announcement["productDescription"] = productDescriptionTF.text
+                announcement["quantity"] = Int(quantityTF.text!)!
+                
+                
+                //success saving, Now save image.
+                //create an image data
+                let imageData = UIImagePNGRepresentation(self.imageIV!.image!)
+                //create a parse file to store in cloud
+                let parseImageFile = PFFile(name: "myImage.png", data: imageData!)
+                announcement["image"] = parseImageFile
+                
+                
+                announcement.saveInBackground(block: { (success, error) -> Void in
+                    if success {
+                        
+                        // I wrote this line because the added item is not showing when it is successfully added, We have to fix this.
+                        
+                        ParseOperaions.retrieveProducts()
+                        
+                        self.displayAlertWithTitle("Success!",
+                                                   message:"Announcement saved.")
+                    } else {
+                        print("Something went wrong")
+                    }
+                })
+            }
+            else{
+                displayMessage("Please upload an image")
+            }
         }
         
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        // The info dictionary contains multiple representations of the image, and this uses the original.
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        // Set photoImageView to display the selected image.
-        imageIV.image = selectedImage
-        
-        // Dismiss the picker.
-        dismiss(animated: true, completion: nil)
-    }
-
-    
-    func prepareImageForSaving(image:UIImage) {
-        // create NSData from UIImage
-        guard let imageData = UIImageJPEGRepresentation(image, 1) else {
-            // handle failed conversion
-            print("jpg error")
-            return
-        }
-        
-        self.saveImage(imageData: imageData as NSData)
-    }
-    
-    func saveImage(imageData: NSData) {
-        imageDatas = imageData
-    }
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//        // The info dictionary contains multiple representations of the image, and this uses the original.
+//        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+//        
+//        // Set photoImageView to display the selected image.
+//        imageIV.image = selectedImage
+//        
+//        // Dismiss the picker.
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//    
+//    func prepareImageForSaving(image:UIImage) {
+//        // create NSData from UIImage
+//        guard let imageData = UIImageJPEGRepresentation(image, 1) else {
+//            // handle failed conversion
+//            print("jpg error")
+//            return
+//        }
+//        
+//        self.saveImage(imageData: imageData as NSData)
+//    }
+//    
+//    func saveImage(imageData: NSData) {
+//        imageDatas = imageData
+//    }
     
     func displayAlertWithTitle(_ title:String, message:String){
         let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

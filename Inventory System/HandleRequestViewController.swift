@@ -35,7 +35,7 @@ class HandleRequestViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         requestedProductName.text = productName
         requestedUserName.text = userName
-        requestedQunadityNeeded.text = String(quandity)
+        requestedQunadityNeeded.text = String(quantity)
         
     }
 

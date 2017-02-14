@@ -25,6 +25,7 @@ class AnnouncementViewController: UIViewController {
     var aboutProduct:String = String()
     var nameOfProduct:String = String()
     static var nameOfUser:String = String()
+    var imageProduct:UIImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class AnnouncementViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         productDescriptionTV.text = aboutProduct
         totalNoOfProducts.text = String(numberOfProducts)
+        productImage.image = imageProduct
     }
     
     override func didReceiveMemoryWarning() {
