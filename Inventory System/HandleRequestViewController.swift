@@ -43,17 +43,7 @@ class HandleRequestViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
     @IBAction func accpetBTN(_ sender: Any) {
@@ -87,19 +77,19 @@ class HandleRequestViewController: UIViewController {
             (objects: [PFObject]?, error: Error?) -> Void in
             if error == nil {
 
-                //objects?[0].deleteEventually()
-                
-                let newquery = PFQuery(className: "Announcements")
-                newquery.whereKey("name", equalTo: pName)
-                newquery.findObjectsInBackground {
-                    (newobjects: [PFObject]?, error: Error?) -> Void in
-                    if error == nil {
-                        newobjects?[0].deleteEventually()
-                        
-//                        print("Value: ",newobjects?[0]["quantity"])
-//                        newobjects?[0]["quantity"] = 500
-                    }
-                }
+                objects?[0].deleteEventually()
+                ParseOperaions.retrieveRequests()
+//                let newquery = PFQuery(className: "Announcements")
+//                newquery.whereKey("name", equalTo: pName)
+//                newquery.findObjectsInBackground {
+//                    (newobjects: [PFObject]?, error: Error?) -> Void in
+//                    if error == nil {
+//                        newobjects?[0].deleteEventually()
+//                        
+////                        print("Value: ",newobjects?[0]["quantity"])
+////                        newobjects?[0]["quantity"] = 500
+//                    }
+//                }
             }
         }
     }
@@ -126,7 +116,23 @@ class HandleRequestViewController: UIViewController {
     
     
     @IBAction func declineBTN(_ sender: Any) {
+        displayAlertWithTitle("Delete", message: "Are you sure to delete this request")
+        //updateAnnouncements(quan: quantity, pName: productName, uName: userName)
         
+    }
+    
+    
+    func displayAlertWithTitle(_ title:String, message:String){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: {
+            (ACTION:UIAlertAction!) in self.updateAnnouncements(quan: self.quantity, pName: self.productName, uName: self.userName)
+            self.dismiss(animated: true, completion: nil)
+            ParseOperaions.retrieveRequests()
+        })
+        let cancelAction = UIAlertAction(title:"Cancel", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

@@ -31,6 +31,7 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         ParseOperaions.retrieveProducts()
+        ParseOperaions.retrieveImages()
         products = ParseOperaions.allProducts
         announcementsTV.reloadData()
     }
@@ -56,7 +57,10 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
         let imageLBL = cell.viewWithTag(71) as! UIImageView!
         let announcementLBL:UILabel = cell.viewWithTag(70) as! UILabel
         announcementLBL.text = products[indexPath.row].name
-        imageLBL?.image = ParseOperaions.allImages[indexPath.row]
+        //let thumbnail = products[indexPath.row]["image"] as! PFFile
+        
+        //imageLBL?.image = products[indexPath.row].image as! UIImage
+        imageLBL?.image = ParseOperaions.productImages[indexPath.row]
        // pImage = ParseOperaions.allImages[indexPath.row]
         return cell
         
@@ -105,7 +109,9 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
             announcementObjectVC.navigationItem.title = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
             announcementObjectVC.nameOfProduct = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
            // announcementObjectVC.imageProduct = pImage
-            announcementObjectVC.imageProduct = ParseOperaions.allImages[(announcementsTV.indexPathForSelectedRow?.row)!]
+//            announcementObjectVC.imageProduct = ParseOperaions.allImages[(announcementsTV.indexPathForSelectedRow?.row)!]
+            announcementObjectVC.imageProduct = ParseOperaions.productImages[(announcementsTV.indexPathForSelectedRow?.row)!]
+
         }
         
         

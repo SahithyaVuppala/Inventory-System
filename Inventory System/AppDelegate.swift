@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // This statement is used to load the table(announcements) for the first time.
         ParseOperaions.retrieveProducts()
         ParseOperaions.retrieveRequests()
+        ParseOperaions.retrieveImages()
         
         return true
     }

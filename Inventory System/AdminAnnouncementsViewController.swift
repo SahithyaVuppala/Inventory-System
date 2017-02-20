@@ -53,7 +53,7 @@ class AdminAnnouncementsViewController: UIViewController {
         let productNameLBL = cell.viewWithTag(21) as! UILabel
         productNameLBL.text = products[indexPath.row].name
         //productIMG.image = products[indexPath.row] as! UIImage
-        productIMG.image = ParseOperaions.allImages[indexPath.row]
+        productIMG.image = ParseOperaions.productImages[indexPath.row]
         return cell
     }
     
