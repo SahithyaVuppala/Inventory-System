@@ -11,7 +11,7 @@ import Parse
 import Bolts
 
 class HandleRequestViewController: UIViewController {
-
+    
     @IBOutlet weak var requestedProductIMG: UIImageView!
     
     @IBOutlet weak var requestedProductName: UILabel!
@@ -28,7 +28,7 @@ class HandleRequestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -38,80 +38,112 @@ class HandleRequestViewController: UIViewController {
         requestedQunadityNeeded.text = String(quantity)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     
     @IBAction func accpetBTN(_ sender: Any) {
-//        for productObject in ParseOperaions.allRequests{
-//            if productObject.productName == productName && productObject.userName == userName{
-////                productObject.productQuandity -= quandity
-//                updateAnnouncements(quan: productObject.productQuandity, pName: productObject.productName, uName: productObject.userName)
-//                //newUpdate(id: productObject.objectId!)
-//            }
-//        }
         
+        let alert:UIAlertController = UIAlertController(title: "Alert", message: "Are you sure to accept tis request!", preferredStyle: .alert)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: {
+            (ACTION:UIAlertAction!) in
+            let query = PFQuery(className:"ClientRequests")
+            query.whereKey("userName", equalTo: self.userName).whereKey("productName", equalTo: self.productName)
+            query.findObjectsInBackground {
+                (objects: [PFObject]?, error: Error?) -> Void in
+                
+                if error == nil {
+                    if let objects = objects {
+                        for object in objects {
+                            //print(object.objectId!)
+                            query.getObjectInBackground(withId: object.objectId!) {
+                                (newObject: PFObject?, error: Error?) -> Void in
+                                if error != nil {
+                                    print(error!)
+                                } else {
+                                    newObject?["productStatus"] = 1
+                                    newObject?.saveInBackground()
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                } else {
+                    // Log details of the failure
+                    print("Error: \(error!) \(error?.localizedDescription)")
+                }
+            }
+            
+            let newQuery = PFQuery(className:"Announcements")
+            newQuery.whereKey("name", equalTo: self.productName)
+            newQuery.findObjectsInBackground {
+                (objects: [PFObject]?, error: Error?) -> Void in
+                
+                if error == nil {
+                    if let objects = objects {
+                        for object in objects {
+                            //print(object.objectId!)
+                            newQuery.getObjectInBackground(withId: object.objectId!) {
+                                (newObject: PFObject?, error: Error?) -> Void in
+                                if error != nil {
+                                    print(error!)
+                                } else {
+                                    //                                print("Original quantity is",object["quantity"])
+                                    let quan = object["quantity"] as! Int
+                                    newObject?["quantity"] = quan - self.quantity
+                                    newObject?.saveInBackground()
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                } else {
+                    // Log details of the failure
+                    print("Error: \(error!) \(error?.localizedDescription)")
+                }
+            }
+            self.dismiss(animated: true, completion: nil)
+            ParseOperaions.retrieveRequests()
+        })
         
+        let cancelAction = UIAlertAction(title:"Cancel", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
         
-     
-
-//        query.getObjectWithId("name")  { (object:PFObject, error: Error?) -> Void in
-//            if object != nil && error == nil{
-//                object!["quandity"] = 2
-//                object!.saveInBackground()
-//            }
-//            
-//        }
-        
-       
     }
     
-    func updateAnnouncements(quan:Int, pName:String, uName:String){
+    func deleteAnnouncements(quan:Int, pName:String, uName:String){
         let query = PFQuery(className: "ClientRequests")
         query.whereKey("productName", equalTo: pName).whereKey("userName", equalTo: uName)
         query.findObjectsInBackground {
             (objects: [PFObject]?, error: Error?) -> Void in
             if error == nil {
-
-                objects?[0].deleteEventually()
-                ParseOperaions.retrieveRequests()
-//                let newquery = PFQuery(className: "Announcements")
-//                newquery.whereKey("name", equalTo: pName)
-//                newquery.findObjectsInBackground {
-//                    (newobjects: [PFObject]?, error: Error?) -> Void in
-//                    if error == nil {
-//                        newobjects?[0].deleteEventually()
-//                        
-////                        print("Value: ",newobjects?[0]["quantity"])
-////                        newobjects?[0]["quantity"] = 500
-//                    }
-//                }
-            }
-        }
-    }
-    
-    func newUpdate(id:String){
-        let query = PFQuery(className: "Announcements")
-        do {
-            let object = try query.getObjectWithId(id)
-            query.findObjectsInBackground {
-                (objects: [PFObject]?, error: Error?) -> Void in
-                if error == nil {
-                    print("Done")
+                
+                DispatchQueue.global(qos: .userInitiated).async {
+                    
+                    DispatchQueue.main.async {
+                        objects?[0].deleteEventually()
+                    }
+                    //                    objects?[0].deleteEventually()
                 }
+                
+                //                dispatch_async(dispatch_get_main_queue()) {
+                //
+                //                }
+                //                DispatchQueue.main.asynchronously() {
+                //                    objects?[0].deleteEventually()
+                //                }
+                
+                ParseOperaions.retrieveRequests()
             }
-            object["quantity"] = 999
-            object.saveInBackground()
-            
         }
-        catch{
-            print("Some thing went wrong")
-        }
-
     }
     
     
@@ -125,7 +157,7 @@ class HandleRequestViewController: UIViewController {
     func displayAlertWithTitle(_ title:String, message:String){
         let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: {
-            (ACTION:UIAlertAction!) in self.updateAnnouncements(quan: self.quantity, pName: self.productName, uName: self.userName)
+            (ACTION:UIAlertAction!) in self.deleteAnnouncements(quan: self.quantity, pName: self.productName, uName: self.userName)
             self.dismiss(animated: true, completion: nil)
             ParseOperaions.retrieveRequests()
         })
@@ -134,5 +166,6 @@ class HandleRequestViewController: UIViewController {
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    
 }
