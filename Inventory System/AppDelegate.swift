@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Announcements.registerSubclass()
         ClientRequests.registerSubclass()
+        Transcations.registerSubclass()
+        
         // This statement is used to load the table(announcements) for the first time.
         ParseOperaions.retrieveProducts()
         ParseOperaions.retrieveRequests()

@@ -111,7 +111,16 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
            // announcementObjectVC.imageProduct = pImage
 //            announcementObjectVC.imageProduct = ParseOperaions.allImages[(announcementsTV.indexPathForSelectedRow?.row)!]
             announcementObjectVC.imageProduct = ParseOperaions.productImages[(announcementsTV.indexPathForSelectedRow?.row)!]
+            
+            
 
+        }
+        else if segue.identifier == "billId" {
+            let bilingVC = segue.destination as! BillingViewController
+            bilingVC.rowNumber = (announcementsTV.indexPathForSelectedRow?.row)!
+            bilingVC.pName = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
+            bilingVC.uName = AnnouncementViewController.nameOfUser
+            
         }
         
         

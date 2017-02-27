@@ -65,6 +65,7 @@ class HandleRequestViewController: UIViewController {
                                 if error != nil {
                                     print(error!)
                                 } else {
+                                    BillingViewController.address = "800 University Drive, 64468"
                                     newObject?["productStatus"] = 1
                                     newObject?.saveInBackground()
                                 }
@@ -97,6 +98,7 @@ class HandleRequestViewController: UIViewController {
                                     let quan = object["quantity"] as! Int
                                     newObject?["quantity"] = quan - self.quantity
                                     newObject?.saveInBackground()
+                                    ParseOperaions.retrieveRequests()
                                 }
                             }
                         }
@@ -130,6 +132,8 @@ class HandleRequestViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         objects?[0].deleteEventually()
+                        //NotificationCenter.default.post(name: Notification.Name(rawValue: "Data updated"), object: nil)
+                        ParseOperaions.retrieveRequests()
                     }
                     //                    objects?[0].deleteEventually()
                 }

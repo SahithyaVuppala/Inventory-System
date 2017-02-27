@@ -30,6 +30,7 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
     
     
     override func viewWillAppear(_ animated: Bool) {
+        clientRequestsTV.reloadData()
         requestsSections.removeAll()
         ParseOperaions.retrieveRequests()
         clientRequests = ParseOperaions.allRequests

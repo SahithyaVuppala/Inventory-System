@@ -23,7 +23,7 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
     
     //let imagePicker = UIImagePickerController()
     
-    var imageDatas: NSData! = NSData()
+    //var imageDatas: NSData! = NSData()
     
     override func viewDidLoad() {
         self.navigationItem.title = "Add Product"

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class AdminAnnouncementsViewController: UIViewController {
 
@@ -53,13 +55,25 @@ class AdminAnnouncementsViewController: UIViewController {
         let productNameLBL = cell.viewWithTag(21) as! UILabel
         productNameLBL.text = products[indexPath.row].name
         //productIMG.image = products[indexPath.row] as! UIImage
+        
+        
         productIMG.image = ParseOperaions.productImages[indexPath.row]
+//        let userImageFile = products[indexPath.row]["image"] as! PFFile
+//        userImageFile.getDataInBackground(block: {
+//            (imageData, error) -> Void in
+//            if (error == nil){
+//                let image = UIImage(data:imageData!)
+//                productIMG.image = image!
+//            }
+//            
+//        })
+        
         return cell
     }
     
     
       //MARK: - Navigation
-     
+    
      // In a storyboard-based application, you will often want to do a little preparation before navigation
       func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
      // Get the new view controller using segue.destinationViewController.
