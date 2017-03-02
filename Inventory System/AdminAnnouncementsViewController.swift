@@ -29,6 +29,7 @@ class AdminAnnouncementsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         ParseOperaions.retrieveProducts()
+        ParseOperaions.retrieveImages()
         products = ParseOperaions.allProducts
         adminAnnouncementsTV.reloadData()
     }
