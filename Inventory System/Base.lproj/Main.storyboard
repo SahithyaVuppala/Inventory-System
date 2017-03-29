@@ -648,7 +648,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X2h-uB-bVx" id="pyT-Ct-d8h">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -790,7 +790,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ncf-zc-Gss" id="06J-7m-tjs">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="20" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-iphone 6s 16gb-rose gold-450x350.png" translatesAutoresizingMaskIntoConstraints="NO" id="jq1-iY-TzZ">
@@ -934,7 +934,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AOe-gg-oGD" id="HPe-Vz-fkK">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-iphone 6s 16gb-rose gold-450x350.png" translatesAutoresizingMaskIntoConstraints="NO" id="h6y-nz-xtS">
@@ -1011,8 +1011,8 @@
                     <tabBarItem key="tabBarItem" title="Recents" image="Star-25.png" id="BRq-XN-3uh"/>
                     <connections>
                         <outlet property="clientRequestsTV" destination="C1b-iB-yht" id="TG8-hP-g4K"/>
-                        <segue destination="dPz-0V-yRU" kind="show" id="7gb-3F-Wqx"/>
-                        <segue destination="xGu-ZB-6qZ" kind="show" id="xe8-H4-zSh"/>
+                        <segue destination="dPz-0V-yRU" kind="show" identifier="accountSegueId" id="7gb-3F-Wqx"/>
+                        <segue destination="xGu-ZB-6qZ" kind="show" identifier="requestSegueId" id="xe8-H4-zSh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDN-k7-fSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1198,7 +1198,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SHO-wn-XZY" id="umT-el-lnL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="71" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-iphone 6s 16gb-rose gold-450x350.png" translatesAutoresizingMaskIntoConstraints="NO" id="fs9-aj-Tyd">
@@ -1833,19 +1833,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2X-04-h1u">
-                                <rect key="frame" x="35" y="402" width="139" height="30"/>
+                                <rect key="frame" x="33" y="384" width="139" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Proceed to Payment"/>
                                 <connections>
                                     <action selector="accpetBTN:" destination="dPz-0V-yRU" eventType="touchUpInside" id="ipU-2t-BFx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="so8-Ht-y2V">
-                                <rect key="frame" x="209" y="402" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="declineBTN:" destination="dPz-0V-yRU" eventType="touchUpInside" id="96P-7w-KFl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Card Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fw-To-C3Y">
@@ -1914,6 +1906,14 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="so8-Ht-y2V">
+                                <rect key="frame" x="206" y="384" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="declineBTN:" destination="dPz-0V-yRU" eventType="touchUpInside" id="96P-7w-KFl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

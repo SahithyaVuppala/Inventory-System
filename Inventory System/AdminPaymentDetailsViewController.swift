@@ -10,6 +10,9 @@ import UIKit
 
 class AdminPaymentDetailsViewController: UIViewController {
 
+    var pName:String = String()
+    var uName:String = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +23,7 @@ class AdminPaymentDetailsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

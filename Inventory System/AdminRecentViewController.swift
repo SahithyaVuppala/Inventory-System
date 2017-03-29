@@ -95,7 +95,12 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
             handleRequestVC.productName = requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]
             handleRequestVC.userName = (requestsDictionary[requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]]?[(clientRequestsTV.indexPathForSelectedRow?.row)!])!
             handleRequestVC.quantity = (requestQuantityDictionary[requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]]?[(clientRequestsTV.indexPathForSelectedRow?.row)!])!
-        } 
+        } else if segue.identifier == "accountSegueId" {
+            
+            let accountPaymentVC = segue.destination as! AdminPaymentDetailsViewController
+            accountPaymentVC.pName = requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]
+            accountPaymentVC.uName = (requestsDictionary[requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]]?[(clientRequestsTV.indexPathForSelectedRow?.row)!])!
+        }
     }
     
     @IBAction func backToClientRequestVC(segue:UIStoryboardSegue){
