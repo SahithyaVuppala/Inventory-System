@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13A642F41E8DE163003A6E45 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A642F31E8DE163003A6E45 /* GuestViewController.swift */; };
+		13A642F61E8DE1BA003A6E45 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A642F51E8DE1BA003A6E45 /* SignUpViewController.swift */; };
+		13A642F81E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13A642F71E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg */; };
+		13A642FA1E8DEBA4003A6E45 /* unnamed.png in Resources */ = {isa = PBXBuildFile; fileRef = 13A642F91E8DEBA4003A6E45 /* unnamed.png */; };
 		13AEE68D1DFA427C001E36BA /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13AEE68C1DFA427C001E36BA /* images.jpg */; };
 		13E18B7A1DFA59EF00578346 /* imageedit_5_9934407718.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */; };
 		53555DBE1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53555DBD1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift */; };
@@ -40,7 +44,6 @@
 		5D2E1ABE1E157E6E00D9D0C2 /* ParseOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2E1ABD1E157E6E00D9D0C2 /* ParseOperations.swift */; };
 		C506F2141E5E348C000B3258 /* Transcations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506F2131E5E348C000B3258 /* Transcations.swift */; };
 		CE354A3A1DB01190003E2412 /* PromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A391DB01190003E2412 /* PromptViewController.swift */; };
-		CE354A3C1DB01292003E2412 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A3B1DB01292003E2412 /* GuestViewController.swift */; };
 		CE354A3E1DB0141E003E2412 /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */; };
 		CE354A401DB02416003E2412 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A3F1DB02416003E2412 /* AnnouncementViewController.swift */; };
 		CE354A421DB02AFF003E2412 /* BillingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE354A411DB02AFF003E2412 /* BillingViewController.swift */; };
@@ -55,10 +58,13 @@
 		CE3C93681DFB5D700024024E /* NewAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C93671DFB5D700024024E /* NewAnnouncementViewController.swift */; };
 		CE7AA1351DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7AA1341DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png */; };
 		CE7AA1371DB2D57D009AE29A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AA1361DB2D57D009AE29A /* HistoryViewController.swift */; };
-		CE7D4BFB1DC5373A00FA9078 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D4BFA1DC5373A00FA9078 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13A642F31E8DE163003A6E45 /* GuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
+		13A642F51E8DE1BA003A6E45 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		13A642F71E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageedit_4_4237653929.jpg; sourceTree = "<group>"; };
+		13A642F91E8DEBA4003A6E45 /* unnamed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unnamed.png; sourceTree = "<group>"; };
 		13AEE68C1DFA427C001E36BA /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
 		13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageedit_5_9934407718.jpg; sourceTree = "<group>"; };
 		53555DBD1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountDetailsViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +102,6 @@
 		5D2E1ABD1E157E6E00D9D0C2 /* ParseOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseOperations.swift; sourceTree = "<group>"; };
 		C506F2131E5E348C000B3258 /* Transcations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transcations.swift; sourceTree = "<group>"; };
 		CE354A391DB01190003E2412 /* PromptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptViewController.swift; sourceTree = "<group>"; };
-		CE354A3B1DB01292003E2412 /* GuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
 		CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
 		CE354A3F1DB02416003E2412 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		CE354A411DB02AFF003E2412 /* BillingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +118,6 @@
 		CE3C93671DFB5D700024024E /* NewAnnouncementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAnnouncementViewController.swift; sourceTree = "<group>"; };
 		CE7AA1341DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-iphone 6s 16gb-rose gold-450x350.png"; sourceTree = "<group>"; };
 		CE7AA1361DB2D57D009AE29A /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		CE7D4BFA1DC5373A00FA9078 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,11 +186,13 @@
 			children = (
 				53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */,
 				53A208D71DF8BB7E0052BB9D /* Star-25.png */,
+				13A642F71E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg */,
 				53A208DF1DF8BD570052BB9D /* Clock25.png */,
 				13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */,
 				13AEE68C1DFA427C001E36BA /* images.jpg */,
 				53A208E31DF8BEA50052BB9D /* Clock-35.png */,
 				CE7AA1341DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png */,
+				13A642F91E8DEBA4003A6E45 /* unnamed.png */,
 				53A208DD1DF8BCA30052BB9D /* Clock-64.png */,
 				53A208DB1DF8BC5A0052BB9D /* Clock-48.png */,
 				CE360BD71DAAC9B1004E45CC /* Gender Neutral User Filled-25.png */,
@@ -199,8 +205,8 @@
 		5DFE548F1E1236CE00BCF019 /* Guest */ = {
 			isa = PBXGroup;
 			children = (
-				CE354A3B1DB01292003E2412 /* GuestViewController.swift */,
-				CE7D4BFA1DC5373A00FA9078 /* SignUpViewController.swift */,
+				13A642F31E8DE163003A6E45 /* GuestViewController.swift */,
+				13A642F51E8DE1BA003A6E45 /* SignUpViewController.swift */,
 			);
 			name = Guest;
 			sourceTree = "<group>";
@@ -329,12 +335,14 @@
 				CE360BCD1DAAC873004E45CC /* Assets.xcassets in Resources */,
 				53A208D81DF8BB7E0052BB9D /* Star-25.png in Resources */,
 				53A208D01DF8ABBC0052BB9D /* Businessman Filled-100.png in Resources */,
+				13A642F81E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg in Resources */,
 				CE360BDE1DAACA83004E45CC /* User-100.png in Resources */,
 				CE360BCB1DAAC873004E45CC /* Main.storyboard in Resources */,
 				CE7AA1351DB2D049009AE29A /* apple-iphone 6s 16gb-rose gold-450x350.png in Resources */,
 				53A208DE1DF8BCA30052BB9D /* Clock-64.png in Resources */,
 				53A208DC1DF8BC5A0052BB9D /* Clock-48.png in Resources */,
 				CE360BE01DAACAB7004E45CC /* Guest Male-96.png in Resources */,
+				13A642FA1E8DEBA4003A6E45 /* unnamed.png in Resources */,
 				53A208E41DF8BEA50052BB9D /* Clock-35.png in Resources */,
 				13AEE68D1DFA427C001E36BA /* images.jpg in Resources */,
 				13E18B7A1DFA59EF00578346 /* imageedit_5_9934407718.jpg in Resources */,
@@ -348,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13A642F61E8DE1BA003A6E45 /* SignUpViewController.swift in Sources */,
 				CE354A421DB02AFF003E2412 /* BillingViewController.swift in Sources */,
 				CE354A3A1DB01190003E2412 /* PromptViewController.swift in Sources */,
 				53555DC21E8DC7EC00762FC5 /* UserAccountInfo.swift in Sources */,
@@ -355,12 +364,10 @@
 				53A208D41DF8B00A0052BB9D /* AdminRecentViewController.swift in Sources */,
 				CE360BC61DAAC873004E45CC /* AppDelegate.swift in Sources */,
 				CE3C93681DFB5D700024024E /* NewAnnouncementViewController.swift in Sources */,
-				CE354A3C1DB01292003E2412 /* GuestViewController.swift in Sources */,
 				537C09D51E00AD6F002382C1 /* Announcements.swift in Sources */,
 				CE354A401DB02416003E2412 /* AnnouncementViewController.swift in Sources */,
 				53AA6BB71DF9F395009D5915 /* AdminLoginViewController.swift in Sources */,
 				53A208D21DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift in Sources */,
-				CE7D4BFB1DC5373A00FA9078 /* SignUpViewController.swift in Sources */,
 				C506F2141E5E348C000B3258 /* Transcations.swift in Sources */,
 				53555DC01E8DC37C00762FC5 /* AdminPaymentDetailsViewController.swift in Sources */,
 				5D17D2DC1E19D03D0097AEA0 /* HandleRequestViewController.swift in Sources */,
@@ -370,6 +377,7 @@
 				CE354A3E1DB0141E003E2412 /* FeaturedViewController.swift in Sources */,
 				CE7AA1371DB2D57D009AE29A /* HistoryViewController.swift in Sources */,
 				5D2E1ABE1E157E6E00D9D0C2 /* ParseOperations.swift in Sources */,
+				13A642F41E8DE163003A6E45 /* GuestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

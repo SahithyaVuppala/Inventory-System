@@ -2,10 +2,12 @@
 //  SignUpViewController.swift
 //  Inventory System
 //
-//  Created by Kotte,Manoj Kumar on 10/29/16.
-//  Copyright © 2016 Kotte,Manoj Kumar. All rights reserved.
+//  Created by Vuppala,Sahithya on 3/30/17.
+//  Copyright © 2017 Kotte,Manoj Kumar. All rights reserved.
 //
 
+import Foundation
+import Foundation
 import UIKit
 import Parse
 
@@ -15,7 +17,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nameTF: UITextField!
     
     @IBOutlet weak var emailTF: UITextField!
-
+    
     @IBOutlet weak var usernameTF: UITextField!
     
     @IBOutlet weak var passwordTF: UITextField!
@@ -23,7 +25,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var confirmPasswordTF: UITextField!
     
-   
+    
     @IBAction func submitBTN(_ sender: AnyObject) {
         let userName = nameTF!.text
         let userEmail = emailTF!.text
@@ -100,7 +102,7 @@ class SignUpViewController: UIViewController {
                 
             } })
         
-
+        
     }
     
     
@@ -112,15 +114,15 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func displayMyAlertMessage(_ userMessage:String) {
         
         let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.alert)
@@ -161,13 +163,13 @@ class SignUpViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

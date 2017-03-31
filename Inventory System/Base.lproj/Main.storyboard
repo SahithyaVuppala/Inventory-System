@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SK6-PB-z90">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SK6-PB-z90">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jX9-Sm-czF">
                                 <rect key="frame" x="167" y="224" width="89" height="67"/>
@@ -139,16 +139,22 @@
                                 <rect key="frame" x="-8" y="0.0" width="336" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageedit_4_4237653929.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TQO-Yg-UKA">
+                                <rect key="frame" x="0.0" y="64" width="400" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7UQ-Rl-OoS">
-                                <rect key="frame" x="16" y="80" width="288" height="284"/>
+                                <rect key="frame" x="0.0" y="185" width="400" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">The inventory system will help a businessman manage his online store. For example, suppose there is an Amazon salesman Bob who buys products on sale in physical stores such as BestBuy and Target and then re-sells them on Amazon. The problem is that the physical stores usually have restrictions on the number of products one can buy at most during sale time. So Bob recruits some people to buy these products and send them to Bob’s Amazon store. Now Bob wants an inventory system to keep the inventory and billing records. Supposes Bob wants to collect some iPhone 6s, he will announce how many he needs and how much he pays for each of them in the inventory system. When Alice buys some products, say 5 iPhone 6s, for Bob, she logins the inventory system and records 5 iPhone 6s. Then she asks Bob for a shipping label and requests a payment.   When Bob sees the request, he will upload a shipping label to the system so Alice can download it. Next, Alice will download the label, ship the package, and upload the shipping receipt into the system. When Bob receives the package, he will examine the products. If everything matches, he will make a payment to Alice.</string>
+                                        <string key="content">This application is mainly designed for a business to manage his/her online store. It mainly addresses the problem that the physical stores usually face like they have restrictions on the number of products one can buy at most during sale time. The owner hires users based on his requirements and the user get the product for the lowest price and gets a profit. </string>
                                         <attributes>
-                                            <font key="NSFont" size="10" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="11" name="Chalkboard"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="6" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -157,16 +163,25 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 </variation>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-T6-goX">
-                                <rect key="frame" x="87" y="402" width="130" height="29"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Opx-Ig-DYY">
+                                <rect key="frame" x="0.0" y="360" width="400" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="Sign Up ?">
-                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">The application is designed based on the assumptions that the products are assumed to be available by the client and the Shipping receipt provided by the client is assumed.</string>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spW-jM-Ag8">
+                                <rect key="frame" x="117" y="460" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="JoinUs">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpBTN:" destination="xq1-FD-nr8" eventType="touchUpInside" id="Puf-Ln-f8W"/>
-                                    <segue destination="nxs-Oq-NOB" kind="show" id="wGo-xk-uy2"/>
+                                    <action selector="joinUsBtn:" destination="xq1-FD-nr8" eventType="touchUpInside" id="YyT-ej-IfL"/>
+                                    <segue destination="nxs-Oq-NOB" kind="showDetail" id="ttk-bS-STj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -175,14 +190,12 @@
                             <mask key="subviews">
                                 <exclude reference="t49-tz-0o3"/>
                                 <exclude reference="7UQ-Rl-OoS"/>
-                                <exclude reference="Na5-T6-goX"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="t49-tz-0o3"/>
                                 <include reference="7UQ-Rl-OoS"/>
-                                <include reference="Na5-T6-goX"/>
                             </mask>
                         </variation>
                     </view>
@@ -190,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tC-7y-rsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="633.75" y="1140"/>
+            <point key="canvasLocation" x="294.375" y="1140"/>
         </scene>
         <!--User Registration-->
         <scene sceneID="1yq-Wm-grL">
@@ -648,7 +661,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X2h-uB-bVx" id="pyT-Ct-d8h">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -790,7 +803,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ncf-zc-Gss" id="06J-7m-tjs">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="20" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-iphone 6s 16gb-rose gold-450x350.png" translatesAutoresizingMaskIntoConstraints="NO" id="jq1-iY-TzZ">
@@ -934,7 +947,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AOe-gg-oGD" id="HPe-Vz-fkK">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-iphone 6s 16gb-rose gold-450x350.png" translatesAutoresizingMaskIntoConstraints="NO" id="h6y-nz-xtS">
@@ -1198,7 +1211,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SHO-wn-XZY" id="umT-el-lnL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="71" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-iphone 6s 16gb-rose gold-450x350.png" translatesAutoresizingMaskIntoConstraints="NO" id="fs9-aj-Tyd">
@@ -1936,10 +1949,11 @@
         <image name="Star-25.png" width="25" height="25"/>
         <image name="User-100.png" width="100" height="100"/>
         <image name="apple-iphone 6s 16gb-rose gold-450x350.png" width="450" height="350"/>
+        <image name="imageedit_4_4237653929.jpg" width="548" height="150"/>
         <image name="imageedit_5_9934407718.jpg" width="240" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ttk-bS-STj"/>
         <segue reference="c1y-Z6-dWe"/>
-        <segue reference="wGo-xk-uy2"/>
     </inferredMetricsTieBreakers>
 </document>
