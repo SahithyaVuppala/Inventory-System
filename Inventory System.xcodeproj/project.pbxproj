@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		13AEE68D1DFA427C001E36BA /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13AEE68C1DFA427C001E36BA /* images.jpg */; };
 		13E18B7A1DFA59EF00578346 /* imageedit_5_9934407718.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */; };
+		53555DBE1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53555DBD1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift */; };
+		53555DC01E8DC37C00762FC5 /* AdminPaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53555DBF1E8DC37C00762FC5 /* AdminPaymentDetailsViewController.swift */; };
+		53555DC21E8DC7EC00762FC5 /* UserAccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53555DC11E8DC7EC00762FC5 /* UserAccountInfo.swift */; };
 		537C09D51E00AD6F002382C1 /* Announcements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C09D41E00AD6F002382C1 /* Announcements.swift */; };
 		538893E51DF528F800E2628E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */; };
 		53A208D01DF8ABBC0052BB9D /* Businessman Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */; };
@@ -58,6 +61,9 @@
 /* Begin PBXFileReference section */
 		13AEE68C1DFA427C001E36BA /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
 		13E18B791DFA59EF00578346 /* imageedit_5_9934407718.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageedit_5_9934407718.jpg; sourceTree = "<group>"; };
+		53555DBD1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountDetailsViewController.swift; sourceTree = "<group>"; };
+		53555DBF1E8DC37C00762FC5 /* AdminPaymentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPaymentDetailsViewController.swift; sourceTree = "<group>"; };
+		53555DC11E8DC7EC00762FC5 /* UserAccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountInfo.swift; sourceTree = "<group>"; };
 		537C09D41E00AD6F002382C1 /* Announcements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcements.swift; sourceTree = "<group>"; };
 		538893E41DF528F800E2628E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		53A208CF1DF8ABBC0052BB9D /* Businessman Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Businessman Filled-100.png"; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 				5D13C4F51E16F7730055D6F6 /* ClientRequests.swift */,
 				5D2E1ABD1E157E6E00D9D0C2 /* ParseOperations.swift */,
 				C506F2131E5E348C000B3258 /* Transcations.swift */,
+				53555DC11E8DC7EC00762FC5 /* UserAccountInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 				CE7AA1361DB2D57D009AE29A /* HistoryViewController.swift */,
 				CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */,
 				CE354A3F1DB02416003E2412 /* AnnouncementViewController.swift */,
+				53555DBD1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				5D17D2DB1E19D03D0097AEA0 /* HandleRequestViewController.swift */,
 				CE3C93671DFB5D700024024E /* NewAnnouncementViewController.swift */,
 				53AA6BB61DF9F395009D5915 /* AdminLoginViewController.swift */,
+				53555DBF1E8DC37C00762FC5 /* AdminPaymentDetailsViewController.swift */,
 			);
 			name = Admin;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 			files = (
 				CE354A421DB02AFF003E2412 /* BillingViewController.swift in Sources */,
 				CE354A3A1DB01190003E2412 /* PromptViewController.swift in Sources */,
+				53555DC21E8DC7EC00762FC5 /* UserAccountInfo.swift in Sources */,
 				CE360BC81DAAC873004E45CC /* HomeViewController.swift in Sources */,
 				53A208D41DF8B00A0052BB9D /* AdminRecentViewController.swift in Sources */,
 				CE360BC61DAAC873004E45CC /* AppDelegate.swift in Sources */,
@@ -352,7 +362,9 @@
 				53A208D21DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift in Sources */,
 				CE7D4BFB1DC5373A00FA9078 /* SignUpViewController.swift in Sources */,
 				C506F2141E5E348C000B3258 /* Transcations.swift in Sources */,
+				53555DC01E8DC37C00762FC5 /* AdminPaymentDetailsViewController.swift in Sources */,
 				5D17D2DC1E19D03D0097AEA0 /* HandleRequestViewController.swift in Sources */,
+				53555DBE1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift in Sources */,
 				5D13C4F61E16F7730055D6F6 /* ClientRequests.swift in Sources */,
 				538893E51DF528F800E2628E /* ForgotPasswordViewController.swift in Sources */,
 				CE354A3E1DB0141E003E2412 /* FeaturedViewController.swift in Sources */,

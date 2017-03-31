@@ -18,6 +18,7 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
 
     @IBOutlet weak var quantityTF: UITextField!
     
+    @IBOutlet weak var priceTF: UITextField!
     
     @IBOutlet weak var imageIV: UIImageView!
     
@@ -111,6 +112,7 @@ class NewAnnouncementViewController: UIViewController, UIImagePickerControllerDe
                 announcement["name"] = productNameTF.text
                 announcement["productDescription"] = productDescriptionTF.text
                 announcement["quantity"] = Int(quantityTF.text!)!
+                announcement["price"] = Int(priceTF.text!)!
                 
                 
                 //success saving, Now save image.

@@ -48,7 +48,7 @@ class HandleRequestViewController: UIViewController {
     
     @IBAction func accpetBTN(_ sender: Any) {
         
-        let alert:UIAlertController = UIAlertController(title: "Alert", message: "Are you sure to accept tis request!", preferredStyle: .alert)
+        let alert:UIAlertController = UIAlertController(title: "Alert", message: "Are you sure to accept this request!", preferredStyle: .alert)
         let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: {
             (ACTION:UIAlertAction!) in
             let query = PFQuery(className:"ClientRequests")
@@ -67,6 +67,7 @@ class HandleRequestViewController: UIViewController {
                                 } else {
                                     BillingViewController.address = "800 University Drive, 64468"
                                     newObject?["productStatus"] = 1
+                                    newObject?["accountStatus"] = 1
                                     newObject?.saveInBackground()
                                 }
                             }

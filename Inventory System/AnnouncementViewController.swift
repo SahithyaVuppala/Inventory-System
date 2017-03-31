@@ -10,6 +10,9 @@ import UIKit
 import Parse
 import Bolts
 
+let documentsFolder = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+let fileName = "/ShippingReceipt.txt"
+let pathToFile = documentsFolder.appending(fileName)
 
 class AnnouncementViewController: UIViewController {
 
@@ -93,6 +96,32 @@ class AnnouncementViewController: UIViewController {
             
         }
         
+        var productName = self.nameOfProduct
+        var userName = AnnouncementViewController.nameOfUser
+        
+        var textFile = "The item has been shipped: \(productName), \(userName)"
+        
+        let fileManager = FileManager.default
+        
+        if !fileManager.fileExists(atPath: pathToFile) {
+            
+            var writeError:NSError?
+            
+            do{
+                let fileToBeWritten = try textFile.write(toFile: pathToFile, atomically: true, encoding: String.Encoding.utf8)
+                
+                if writeError == nil {
+                    print("No problems, we could save the file and the content was \(textFile)")
+                }else{
+                    print("We encountered an error and this error is \(writeError)")
+                }
+            }catch{
+                print("\(writeError)")
+            }
+        }else {
+            print("File was already there")
+        }
+
     }
     
     

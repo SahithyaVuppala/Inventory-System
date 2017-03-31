@@ -69,10 +69,11 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if checkStatus(row: indexPath.row){
+        if checkStatusTransaction(row: indexPath.row){
+            performSegue(withIdentifier: "transaction", sender: nil)
+        }else if checkStatus(row: indexPath.row){
             performSegue(withIdentifier: "billId", sender: nil)
-        }
-        else{
+        }else {
             performSegue(withIdentifier: "announcementId", sender: nil)
         }
         
@@ -94,7 +95,20 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
         return flag
     }
     
-    
+    func checkStatusTransaction(row:Int) -> Bool{
+        var status:Bool = false
+        
+        for productObject in ParseOperaions.allRequests{
+            if productObject.productName == products[row].name && productObject.userName == AnnouncementViewController.nameOfUser {
+                if productObject.productStatus == 2{
+                    status = true
+                    break
+                }
+            }
+            
+        }
+        return status
+    }
     
     
     // MARK: - Navigation
@@ -121,11 +135,15 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
             bilingVC.pName = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
             bilingVC.uName = AnnouncementViewController.nameOfUser
             
+        }else if segue.identifier == "transaction" {
+            let transactionVC = segue.destination as! UserAccountDetailsViewController
+            transactionVC.pName = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
+            transactionVC.uName = AnnouncementViewController.nameOfUser
         }
-        
-        
-    }
     
+    
+    }
+
     @IBAction func unwindBack(_ sender:UIStoryboardSegue){
     }
     

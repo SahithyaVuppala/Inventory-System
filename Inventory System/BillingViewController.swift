@@ -121,6 +121,35 @@ class BillingViewController: UIViewController, UIImagePickerControllerDelegate,U
                 }
             })
             
+            let query1 = PFQuery(className:"ClientRequests")
+            query1.whereKey("userName", equalTo: AnnouncementViewController.nameOfUser).whereKey("productName", equalTo: self.pName)
+            query1.findObjectsInBackground {
+                (objects: [PFObject]?, error: Error?) -> Void in
+                
+                if error == nil {
+                    if let objects = objects {
+                        for object in objects {
+                            //print(object.objectId!)
+                            query1.getObjectInBackground(withId: object.objectId!) {
+                                (newObject: PFObject?, error: Error?) -> Void in
+                                if error != nil {
+                                    print(error!)
+                                } else {
+                                    
+                                    newObject?["productStatus"] = 2
+                                    newObject?.saveInBackground()
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                } else {
+                    // Log details of the failure
+                    print("Error: \(error!) \(error?.localizedDescription)")
+                }
+            }
+            
         }
         
     }
