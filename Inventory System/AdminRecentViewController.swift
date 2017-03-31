@@ -85,7 +85,50 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
         userNameLBL.text = resultArray?[indexPath.row]
         userName = userNameLBL.text!
         return cell
+        
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if checkStatusTransaction(row: indexPath.row){
+            performSegue(withIdentifier: "accountSegueId", sender: nil)
+        }else {
+            performSegue(withIdentifier: "requestSegueId", sender: nil)
+        }
+        
+    }
+    
+    func checkStatus(row:Int) -> Bool{
+        var flag:Bool = false
+        
+        for productObject in ParseOperaions.allRequests{
+            //if productObject.productName == requestsSections[row] && productObject.userName == AnnouncementViewController.nameOfUser {
+            if productObject.productName == clientRequests[row].productName && productObject.userName == clientRequests[row].userName {
+                if productObject.accountStatus == 1{
+                    flag = true
+                    break
+                }
+            }
+            
+        }
+        return flag
+    }
+    
+    func checkStatusTransaction(row:Int) -> Bool{
+        var status:Bool = false
+        
+        for productObject in ParseOperaions.allRequests{
+            if productObject.productName == clientRequests[row].productName && productObject.userName == clientRequests[row].userName {
+                if productObject.accountStatus == 2{
+                    status = true
+                    break
+                }
+            }
+            
+        }
+        return status
+    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

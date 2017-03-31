@@ -16,7 +16,7 @@ class ClientRequests:PFObject, PFSubclassing {
     @NSManaged var userName:String
     @NSManaged var productQuandity:Int
     @NSManaged var productStatus:Int
-    @NSManaged var clientStatus:Int
+    @NSManaged var accountStatus:Int
     
     static func parseClassName() -> String {
         return "ClientRequests"
