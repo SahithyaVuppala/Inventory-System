@@ -98,27 +98,27 @@ class AdminRecentViewController: UIViewController,UITableViewDataSource,UITableV
         
     }
     
-    func checkStatus(row:Int) -> Bool{
-        var flag:Bool = false
-        
-        for productObject in ParseOperaions.allRequests{
-            //if productObject.productName == requestsSections[row] && productObject.userName == AnnouncementViewController.nameOfUser {
-            if productObject.productName == clientRequests[row].productName && productObject.userName == clientRequests[row].userName {
-                if productObject.accountStatus == 1{
-                    flag = true
-                    break
-                }
-            }
-            
-        }
-        return flag
-    }
+//    func checkStatus(row:Int) -> Bool{
+//        var flag:Bool = false
+//        
+//        for productObject in ParseOperaions.allRequests{
+//            //if productObject.productName == requestsSections[row] && productObject.userName == AnnouncementViewController.nameOfUser {
+//            if productObject.productName == clientRequests[row].productName && productObject.userName == clientRequests[row].userName {
+//                if productObject.accountStatus == 1{
+//                    flag = true
+//                    break
+//                }
+//            }
+//            
+//        }
+//        return flag
+//    }
     
     func checkStatusTransaction(row:Int) -> Bool{
         var status:Bool = false
         
         for productObject in ParseOperaions.allRequests{
-            if productObject.productName == clientRequests[row].productName && productObject.userName == clientRequests[row].userName {
+            if productObject.productName == requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!] && productObject.userName == (requestsDictionary[requestsSections[(clientRequestsTV.indexPathForSelectedRow?.section)!]]?[(clientRequestsTV.indexPathForSelectedRow?.row)!])! {
                 if productObject.accountStatus == 2{
                     status = true
                     break

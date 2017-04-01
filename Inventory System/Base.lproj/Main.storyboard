@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ESS-FY-aSL">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ESS-FY-aSL">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -679,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cob-cx-C0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3570" y="1303"/>
+            <point key="canvasLocation" x="3514" y="1295"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="8Gs-T0-ndt">
@@ -1173,9 +1173,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageedit_5_9934407718.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-ZF-DNG">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13n-Hs-EZM">
                                 <rect key="frame" x="0.0" y="17" width="320" height="44"/>
                                 <color key="backgroundColor" red="0.16625949849999999" green="1" blue="0.28584697669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1245,52 +1242,33 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="zoj-5R-Jn9" id="KzA-Ij-TSc"/>
-                                    <outlet property="delegate" destination="zoj-5R-Jn9" id="uwO-kZ-MuW"/>
+                                    <outlet property="dataSource" destination="zoj-5R-Jn9" id="dza-AM-6bO"/>
+                                    <outlet property="delegate" destination="zoj-5R-Jn9" id="k5m-dJ-Is3"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="13n-Hs-EZM" firstAttribute="leading" secondItem="bRJ-ZF-DNG" secondAttribute="leading" id="5aQ-gD-HGh"/>
                             <constraint firstItem="kvM-6C-DXp" firstAttribute="trailing" secondItem="13n-Hs-EZM" secondAttribute="trailing" id="95J-Ka-yeI"/>
                             <constraint firstItem="kvM-6C-DXp" firstAttribute="leading" secondItem="13n-Hs-EZM" secondAttribute="leading" id="DDa-T9-2Uy"/>
-                            <constraint firstItem="bRJ-ZF-DNG" firstAttribute="bottom" secondItem="rTv-t5-gZI" secondAttribute="bottomMargin" constant="-352" id="EYv-Hl-eBp"/>
                             <constraint firstItem="kvM-6C-DXp" firstAttribute="top" secondItem="13n-Hs-EZM" secondAttribute="bottom" constant="28" id="LOB-Ds-PZO"/>
                             <constraint firstItem="r1K-FT-SvE" firstAttribute="top" secondItem="kvM-6C-DXp" secondAttribute="bottom" id="N7w-Wg-z3m"/>
                             <constraint firstAttribute="trailing" secondItem="13n-Hs-EZM" secondAttribute="trailing" id="TqB-rv-9gU"/>
                             <constraint firstAttribute="trailing" secondItem="13n-Hs-EZM" secondAttribute="trailing" id="aQc-4W-xJx"/>
                             <constraint firstItem="r1K-FT-SvE" firstAttribute="top" secondItem="kvM-6C-DXp" secondAttribute="bottom" id="cL4-5N-UkM"/>
                             <constraint firstItem="13n-Hs-EZM" firstAttribute="leading" secondItem="rTv-t5-gZI" secondAttribute="leading" id="fYG-o0-S7U"/>
-                            <constraint firstItem="bRJ-ZF-DNG" firstAttribute="leading" secondItem="rTv-t5-gZI" secondAttribute="leadingMargin" constant="-16" id="gSp-Kn-IMc"/>
                             <constraint firstItem="13n-Hs-EZM" firstAttribute="top" secondItem="rTv-t5-gZI" secondAttribute="topMargin" constant="17" id="jqW-HV-OvP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bRJ-ZF-DNG" secondAttribute="trailing" constant="64" id="kFg-Ti-yOz"/>
-                            <constraint firstItem="bRJ-ZF-DNG" firstAttribute="top" secondItem="rTv-t5-gZI" secondAttribute="topMargin" id="qWy-h1-kfC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="bRJ-ZF-DNG"/>
                                 <exclude reference="13n-Hs-EZM"/>
                                 <exclude reference="kvM-6C-DXp"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="EYv-Hl-eBp"/>
-                                <exclude reference="gSp-Kn-IMc"/>
-                                <exclude reference="kFg-Ti-yOz"/>
-                                <exclude reference="qWy-h1-kfC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="bRJ-ZF-DNG"/>
                                 <include reference="13n-Hs-EZM"/>
                                 <include reference="kvM-6C-DXp"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="EYv-Hl-eBp"/>
-                                <include reference="gSp-Kn-IMc"/>
-                                <include reference="kFg-Ti-yOz"/>
-                                <include reference="qWy-h1-kfC"/>
                             </mask>
                         </variation>
                     </view>
@@ -1298,8 +1276,7 @@
                     <navigationItem key="navigationItem" title="Title" id="Ieq-Ej-nPu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="announcementsTV" destination="kvM-6C-DXp" id="teA-a3-P5B"/>
-                        <outlet property="view" destination="bRJ-ZF-DNG" id="6Qr-5Z-FON"/>
+                        <outlet property="announcementTV" destination="kvM-6C-DXp" id="vXR-Ip-VFb"/>
                         <segue destination="LyQ-P0-zZX" kind="show" identifier="billId" id="utk-BR-h9G"/>
                         <segue destination="ar0-x3-EvV" kind="show" identifier="announcementId" id="5fp-XG-8NB"/>
                         <segue destination="tza-tX-bfe" kind="show" identifier="transaction" id="J0b-0b-WfP"/>
@@ -1953,7 +1930,7 @@
         <image name="imageedit_5_9934407718.jpg" width="240" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Hig-BY-cxX"/>
         <segue reference="ttk-bS-STj"/>
-        <segue reference="c1y-Z6-dWe"/>
     </inferredMetricsTieBreakers>
 </document>

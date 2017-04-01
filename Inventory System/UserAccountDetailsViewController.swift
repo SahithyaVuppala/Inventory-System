@@ -71,6 +71,31 @@ class UserAccountDetailsViewController: UIViewController {
         //                displayMessage("You already requested for this product")
         //            }
         //            else{
+        
+        let query = PFQuery(className:"ClientRequests")
+        query.whereKey("userName", equalTo: self.uName).whereKey("productName", equalTo: self.pName)
+        query.findObjectsInBackground {
+            (objects: [PFObject]?, error: Error?) -> Void in
+            
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        //print(object.objectId!)
+                        query.getObjectInBackground(withId: object.objectId!) {
+                            (newObject: PFObject?, error: Error?) -> Void in
+                            if error != nil {
+                                print(error!)
+                            } else {
+                                newObject?["accountStatus"] = 2
+                                newObject?.saveInBackground()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        
         let accountRequest = PFObject(className: "UserAccountInfo")
         accountRequest["productName"] = pName
         accountRequest["userName"] = AnnouncementViewController.nameOfUser
@@ -82,6 +107,30 @@ class UserAccountDetailsViewController: UIViewController {
                 self.displayMyAlertMessage("Your account information has been sent successfully")
             }
         })
+        
+//        let query = PFQuery(className:"ClientRequests")
+//        query.whereKey("userName", equalTo: self.uName).whereKey("productName", equalTo: self.pName)
+//        query.findObjectsInBackground {
+//            (objects: [PFObject]?, error: Error?) -> Void in
+//            
+//            if error == nil {
+//                if let objects = objects {
+//                    for object in objects {
+//                        //print(object.objectId!)
+//                        query.getObjectInBackground(withId: object.objectId!) {
+//                            (newObject: PFObject?, error: Error?) -> Void in
+//                            if error != nil {
+//                                print(error!)
+//                            } else {
+//                                newObject?["accountStatus"] = 2
+//                                newObject?.saveInBackground()
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+        
         
 
     }

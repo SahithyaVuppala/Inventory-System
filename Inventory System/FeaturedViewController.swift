@@ -12,29 +12,46 @@ import Bolts
 
 class FeaturedViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var announcementsTV: UITableView!
+    
+    
+    @IBOutlet weak var announcementTV: UITableView!
     
     var detailedDescription:String = String()
     
     var numProducts:Int = Int()
     
     var products:[Announcements] = []
+    //var pr:[String] = ["a","b"]
     
     //var pImage:UIImage = UIImage()
         
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+       // self.announcementTV.register(UINib(nibName: announcementTV, bundle: nil), forCellReuseIdentifier: "announcementCell")
+//        ParseOperaions.retrieveProducts()
+//        ParseOperaions.retrieveImages()
+
         // Do any additional setup after loading the view.
     }
     
+//    override func awakeFromNib() {
+//        announcementsTV.delegate = self
+//        announcementsTV.dataSource = self
+////        ParseOperaions.retrieveProducts()
+////        ParseOperaions.retrieveImages()
+//        announcementsTV.reloadData()
+//    }
+//
     override func viewWillAppear(_ animated: Bool) {
         ParseOperaions.retrieveProducts()
         ParseOperaions.retrieveImages()
         products = ParseOperaions.allProducts
-        announcementsTV.reloadData()
+        //print(products)
+        self.announcementTV.reloadData()
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,8 +72,10 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
         var cell:UITableViewCell!
         cell = tableView.dequeueReusableCell(withIdentifier: "announcementCell",for: indexPath)
         let imageLBL = cell.viewWithTag(71) as! UIImageView!
-        let announcementLBL:UILabel = cell.viewWithTag(70) as! UILabel
+        let announcementLBL:UILabel = cell.viewWithTag(70) as! UILabel!
         announcementLBL.text = products[indexPath.row].name
+        //announcementLBL.text = pr[indexPath.row]
+        //print(products[indexPath.row].name)
         //let thumbnail = products[indexPath.row]["image"] as! PFFile
         
         //imageLBL?.image = products[indexPath.row].image as! UIImage
@@ -67,7 +86,7 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
     }
     
     
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if checkStatusTransaction(row: indexPath.row){
             performSegue(withIdentifier: "transaction", sender: nil)
@@ -90,7 +109,7 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
                     break
                 }
             }
-
+            
         }
         return flag
     }
@@ -118,26 +137,26 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
         if segue.identifier == "announcementId"{
             let announcementObjectVC = segue.destination as! AnnouncementViewController
             //announcementObjectVC.numberOfProducts = numProducts
-            announcementObjectVC.numberOfProducts = products[(announcementsTV.indexPathForSelectedRow?.row)!].quantity
-            announcementObjectVC.aboutProduct = products[(announcementsTV.indexPathForSelectedRow?.row)!].productDescription
-            announcementObjectVC.navigationItem.title = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
-            announcementObjectVC.nameOfProduct = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
+            announcementObjectVC.numberOfProducts = products[(announcementTV.indexPathForSelectedRow?.row)!].quantity
+            announcementObjectVC.aboutProduct = products[(announcementTV.indexPathForSelectedRow?.row)!].productDescription
+            announcementObjectVC.navigationItem.title = products[(announcementTV.indexPathForSelectedRow?.row)!].name
+            announcementObjectVC.nameOfProduct = products[(announcementTV.indexPathForSelectedRow?.row)!].name
            // announcementObjectVC.imageProduct = pImage
 //            announcementObjectVC.imageProduct = ParseOperaions.allImages[(announcementsTV.indexPathForSelectedRow?.row)!]
-            announcementObjectVC.imageProduct = ParseOperaions.productImages[(announcementsTV.indexPathForSelectedRow?.row)!]
+            announcementObjectVC.imageProduct = ParseOperaions.productImages[(announcementTV.indexPathForSelectedRow?.row)!]
             
             
 
         }
         else if segue.identifier == "billId" {
             let bilingVC = segue.destination as! BillingViewController
-            bilingVC.rowNumber = (announcementsTV.indexPathForSelectedRow?.row)!
-            bilingVC.pName = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
+            bilingVC.rowNumber = (announcementTV.indexPathForSelectedRow?.row)!
+            bilingVC.pName = products[(announcementTV.indexPathForSelectedRow?.row)!].name
             bilingVC.uName = AnnouncementViewController.nameOfUser
             
         }else if segue.identifier == "transaction" {
             let transactionVC = segue.destination as! UserAccountDetailsViewController
-            transactionVC.pName = products[(announcementsTV.indexPathForSelectedRow?.row)!].name
+            transactionVC.pName = products[(announcementTV.indexPathForSelectedRow?.row)!].name
             transactionVC.uName = AnnouncementViewController.nameOfUser
         }
     

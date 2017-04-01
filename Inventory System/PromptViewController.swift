@@ -14,7 +14,9 @@ class UserLogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ParseOperaions.retrieveProducts()
+        ParseOperaions.retrieveImages()
+        //ParseOperaions.retrieveRequests()
         // Do any additional setup after loading the view.
     }
 
@@ -62,6 +64,8 @@ class UserLogInViewController: UIViewController {
 //                if emailVerified != nil && (emailVerified as! Bool) == true {
 //
                 AnnouncementViewController.nameOfUser = userName!
+                ParseOperaions.retrieveProducts()
+                ParseOperaions.retrieveImages()
                 self.performSegue(withIdentifier: "tabBarSegue", sender: nil)
 //                if let destinationTabBar = tabBarSegue.destinationViewController as? UITabBarController {
 //                    
