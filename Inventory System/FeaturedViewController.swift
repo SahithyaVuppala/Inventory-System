@@ -159,7 +159,11 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
             transactionVC.pName = products[(announcementTV.indexPathForSelectedRow?.row)!].name
             transactionVC.uName = AnnouncementViewController.nameOfUser
         }
-    
+      //  else if segue.identifier == "payment" {
+      //      let transactionVC = segue.destination as! PaymentConformationViewController
+      //      transactionVC.pName = products[(announcementTV.indexPathForSelectedRow?.row)!].name
+      //      transactionVC.uName = PaymentConformationViewController.nameOfUser
+      //  }
     
     }
 

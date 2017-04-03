@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		136BB0F51E92F92E00163668 /* PaymentConformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136BB0F41E92F92E00163668 /* PaymentConformationViewController.swift */; };
 		13A642F41E8DE163003A6E45 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A642F31E8DE163003A6E45 /* GuestViewController.swift */; };
 		13A642F61E8DE1BA003A6E45 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A642F51E8DE1BA003A6E45 /* SignUpViewController.swift */; };
 		13A642F81E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13A642F71E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		136BB0F41E92F92E00163668 /* PaymentConformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentConformationViewController.swift; sourceTree = "<group>"; };
 		13A642F31E8DE163003A6E45 /* GuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
 		13A642F51E8DE1BA003A6E45 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		13A642F71E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageedit_4_4237653929.jpg; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */,
 				CE354A3F1DB02416003E2412 /* AnnouncementViewController.swift */,
 				53555DBD1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift */,
+				136BB0F41E92F92E00163668 /* PaymentConformationViewController.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				53A208D21DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift in Sources */,
 				C506F2141E5E348C000B3258 /* Transcations.swift in Sources */,
 				53555DC01E8DC37C00762FC5 /* AdminPaymentDetailsViewController.swift in Sources */,
+				136BB0F51E92F92E00163668 /* PaymentConformationViewController.swift in Sources */,
 				5D17D2DC1E19D03D0097AEA0 /* HandleRequestViewController.swift in Sources */,
 				53555DBE1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift in Sources */,
 				5D13C4F61E16F7730055D6F6 /* ClientRequests.swift in Sources */,

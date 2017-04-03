@@ -15,6 +15,11 @@ class UserAccountInfo:PFObject, PFSubclassing{
     @NSManaged var userName:String
     @NSManaged var accountNumber:Int
     @NSManaged var routingNumber:Int
+    @NSManaged var adminCardName:String
+    @NSManaged var adminCardNum:Int
+    @NSManaged var AdminCardExpiry:String
+    @NSManaged var AdminCVVno:Int
+    
     
     static func parseClassName() -> String{
         return "UserAccountInfo"
