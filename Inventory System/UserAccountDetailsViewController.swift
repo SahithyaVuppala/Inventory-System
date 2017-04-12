@@ -26,39 +26,39 @@ class UserAccountDetailsViewController: UIViewController {
     var pName:String = String()
     var uName:String = String()
     
-    @IBOutlet weak var accountNumTF: UITextField!
+    @IBOutlet weak var cardNameTF: UITextField!
     
-    @IBOutlet weak var routingNo: UITextField!
+    @IBOutlet weak var cardNumTF: UITextField!
     
-    @IBAction func submitBTN(_ sender: UIButton) {
+    @IBAction func addCardBTN(_ sender: UIButton) {
         
-        if accountNumTF!.text!.isEmpty || self.routingNo!.text!.isEmpty{
+        if cardNameTF!.text!.isEmpty || cardNumTF!.text!.isEmpty{
             displayMyAlertMessage("All the fields are required")
             return
         }
         
-        let accountNo = accountNumTF.text!
-        let routingNum = self.routingNo.text!
+        let cardName = cardNameTF.text!
+        let cardNum = cardNumTF.text!
         
-        let allowedChar = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
-        let accountChar = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
+        let allowedChar = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
+        let accountChar = "[A-Za-z]+"
         let charTest1 = NSPredicate(format:"SELF MATCHES %@", allowedChar)
         let charTest2 = NSPredicate(format:"SELF MATCHES %@", accountChar)
-        if charTest2.evaluate(with: accountNo){
+        if charTest2.evaluate(with: cardName){
             // Do nothing continue forward
         }
         else {
             //emailIdValidation = false
-            displayMyAlertMessage("Please Enter Valid account number")
+            displayMyAlertMessage("Please Enter Valid Card Name")
             return
         }
         
-        if charTest1.evaluate(with: routingNum) {
+        if charTest1.evaluate(with: cardNum) {
             
         }
         else {
             //emailIdValidation = false
-            displayMyAlertMessage("Please Enter Valid routing number")
+            displayMyAlertMessage("Please Enter Valid Card Number")
             return
         }
         
@@ -99,12 +99,14 @@ class UserAccountDetailsViewController: UIViewController {
         let accountRequest = PFObject(className: "UserAccountInfo")
         accountRequest["productName"] = pName
         accountRequest["userName"] = AnnouncementViewController.nameOfUser
-        accountRequest["accountNumber"] = accountNo
-        accountRequest["routingNumber"] = routingNum
+        accountRequest["cardName"] = cardName
+        accountRequest["cardNum"] = cardNum
         //clientRequest["productStatus"] = 1
         accountRequest.saveInBackground(block: { (success, error) -> Void in
             if success{
-                self.displayMyAlertMessage("Your account information has been sent successfully")
+                self.cardNameTF.text = ""
+                self.cardNumTF.text = ""
+                self.displayMyAlertMessage("Your card details has been sent successfully")
             }
         })
         

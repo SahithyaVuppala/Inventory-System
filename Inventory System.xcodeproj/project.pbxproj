@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BE464941E9448110007693A /* PaymentConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE464931E9448110007693A /* PaymentConfirmationViewController.swift */; };
 		13A642F41E8DE163003A6E45 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A642F31E8DE163003A6E45 /* GuestViewController.swift */; };
 		13A642F61E8DE1BA003A6E45 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A642F51E8DE1BA003A6E45 /* SignUpViewController.swift */; };
 		13A642F81E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13A642F71E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BE464931E9448110007693A /* PaymentConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationViewController.swift; sourceTree = "<group>"; };
 		13A642F31E8DE163003A6E45 /* GuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
 		13A642F51E8DE1BA003A6E45 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		13A642F71E8DE1EF003A6E45 /* imageedit_4_4237653929.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageedit_4_4237653929.jpg; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				CE354A3D1DB0141E003E2412 /* FeaturedViewController.swift */,
 				CE354A3F1DB02416003E2412 /* AnnouncementViewController.swift */,
 				53555DBD1E8DBF3800762FC5 /* UserAccountDetailsViewController.swift */,
+				0BE464931E9448110007693A /* PaymentConfirmationViewController.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				537C09D51E00AD6F002382C1 /* Announcements.swift in Sources */,
 				CE354A401DB02416003E2412 /* AnnouncementViewController.swift in Sources */,
 				53AA6BB71DF9F395009D5915 /* AdminLoginViewController.swift in Sources */,
+				0BE464941E9448110007693A /* PaymentConfirmationViewController.swift in Sources */,
 				53A208D21DF8AFDD0052BB9D /* AdminAnnouncementsViewController.swift in Sources */,
 				C506F2141E5E348C000B3258 /* Transcations.swift in Sources */,
 				53555DC01E8DC37C00762FC5 /* AdminPaymentDetailsViewController.swift in Sources */,

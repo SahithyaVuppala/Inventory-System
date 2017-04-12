@@ -60,8 +60,8 @@ class UserLogInViewController: UIViewController {
             }
             else {
                 
-//                let emailVerified = user!["emailVerified"]
-//                if emailVerified != nil && (emailVerified as! Bool) == true {
+                let emailVerified = user!["emailVerified"]
+                if emailVerified != nil && (emailVerified as! Bool) == true {
 //
                 AnnouncementViewController.nameOfUser = userName!
                 ParseOperaions.retrieveProducts()
@@ -81,10 +81,10 @@ class UserLogInViewController: UIViewController {
 //                let destinationVC = self.tabBarController?.setViewControllers([featureVC,historyVC], animated: true)
 //                
 //                self.showViewController(featureVC, sender: user)
-//                }else{
+                }else{
 //                    // The email has not been verified, so logout the user
-//                    self.displayAlertWithTitle("Login Failed", message:"Please verify your Email Id")
-//                }
+                    self.displayAlertWithTitle("Login Failed", message:"Please verify your Email Id")
+               }
                 }
             
         })

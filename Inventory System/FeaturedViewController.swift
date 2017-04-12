@@ -88,7 +88,9 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if checkStatusTransaction(row: indexPath.row){
+        if checkPaymentConfirmation(row: indexPath.row){
+            performSegue(withIdentifier: "payment", sender: nil)
+        }else if checkStatusTransaction(row: indexPath.row){
             performSegue(withIdentifier: "transaction", sender: nil)
         }else if checkStatus(row: indexPath.row){
             performSegue(withIdentifier: "billId", sender: nil)
@@ -129,6 +131,21 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
         return status
     }
     
+    func checkPaymentConfirmation(row:Int) -> Bool{
+        var status:Bool = false
+        
+        for productObject in ParseOperaions.allRequests{
+            if productObject.productName == products[row].name && productObject.userName == AnnouncementViewController.nameOfUser {
+                if productObject.productStatus == 3{
+                    status = true
+                    break
+                }
+            }
+            
+        }
+        return status
+    }
+
     
     // MARK: - Navigation
     
@@ -158,6 +175,9 @@ class FeaturedViewController: UIViewController,UITableViewDataSource, UITableVie
             let transactionVC = segue.destination as! UserAccountDetailsViewController
             transactionVC.pName = products[(announcementTV.indexPathForSelectedRow?.row)!].name
             transactionVC.uName = AnnouncementViewController.nameOfUser
+        }else if segue.identifier == "payment" {
+            let paymentVC = segue.destination as! PaymentConfirmationViewController
+            
         }
     
     
