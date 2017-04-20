@@ -31,7 +31,7 @@ will be asked to enter the developer credentials. Enter your credentials, app ge
 
 System Requirements:
 
-There are three roles possible for the system:
+There are three roles in the application:
 
 Admin Role
 
